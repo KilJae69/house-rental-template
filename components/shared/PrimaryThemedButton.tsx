@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { SEASON_ICONS } from "@/constants/assetsData";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import ClientOnly from "../ClientOnly";
+
 
 // Extract the exact href type of your next-intl Link
 type LinkHref = ComponentProps<typeof Link>["href"];
@@ -43,7 +43,7 @@ export default function PrimaryThemedButton({
 
   if (href) {
     return (
-      <ClientOnly>
+    
         <Link href={href} className={classes} aria-disabled={disabled}>
           {children}
           <Image
@@ -54,12 +54,12 @@ export default function PrimaryThemedButton({
             height={20}
           />
         </Link>
-      </ClientOnly>
+     
     );
   }
 
   return (
-    <ClientOnly>
+    
       <button
         type="button"
         className={classes}
@@ -68,6 +68,6 @@ export default function PrimaryThemedButton({
       >
         {children}
       </button>
-    </ClientOnly>
+   
   );
 }
