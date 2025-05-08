@@ -32,7 +32,7 @@ export function FormModal() {
             <MdAttachEmail className="size-5" />
           </div>
         </ModalTrigger>
-        <ModalBody>
+        <ModalBody className="">
           <ModalContent>
             <h3 className="text-lg md:text-2xl text-white font-bold text-center ">
               <span>{t("formModal.modalTitle")}</span>{" "}

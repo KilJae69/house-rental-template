@@ -97,3 +97,7 @@
   -webkit-mask-image: linear-gradient(black 90%, transparent 100%);
   mask-image: linear-gradient(black 90%, transparent 100%);
 }
+
+.text-gradient-accent {
+  @apply bg-gradient-to-tr from-[var(--color-primary-dark)] via-[var(--color-primary)] to-[var(--color-primary)] bg-clip-text text-transparent;
+}

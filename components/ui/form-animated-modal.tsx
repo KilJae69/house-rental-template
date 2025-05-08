@@ -9,7 +9,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-
+import ReactDOM from "react-dom";
 interface ModalContextType {
   open: boolean;
   setOpen: (open: boolean) => void;
@@ -69,19 +69,31 @@ export const ModalBody = ({
 }) => {
   const { open } = useModal();
 
-  useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [open]);
+   useEffect(() => {
+     if (open) {
+       document.body.style.overflow = "hidden";
+     } else {
+       document.body.style.overflow = "auto";
+     }
+   }, [open]);
+
+  const [isClient, setIsClient] = useState(false); // Track if the code is running on the client
+  
+    useEffect(() => {
+      setIsClient(true); // Set isClient to true when the component mounts (client-side)
+    }, []);
 
   const modalRef = useRef<HTMLDivElement>(null as unknown as HTMLDivElement);
   const { setOpen } = useModal();
   useOutsideClick(modalRef, () => setOpen(false));
 
-  return (
+
+  if (!isClient) return null; // Don't render anything on the server
+
+  const modalRoot = document.getElementById("modal-root");
+  if (!modalRoot) return null;
+
+  return (ReactDOM.createPortal(
     <AnimatePresence>
       {open && (
         <m.div
@@ -134,8 +146,9 @@ export const ModalBody = ({
           </m.div>
         </m.div>
       )}
-    </AnimatePresence>
-  );
+    </AnimatePresence>,
+    modalRoot
+  ))
 };
 
 export const ModalContent = ({
