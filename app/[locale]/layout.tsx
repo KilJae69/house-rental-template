@@ -1,16 +1,14 @@
-
 import { Locale, locales } from "@/lib/locales";
 import { routing } from "../../i18n/routing";
 import { notFound } from "next/navigation";
 import { getMessages, setRequestLocale } from "next-intl/server";
-import { NextIntlClientProvider } from "next-intl";
-import { LazyMotion, domAnimation } from "framer-motion";
+
 import { Poppins } from "next/font/google";
 import "@/app/globals.css";
 import InnerLayout from "@/components/InnerLayout";
-import { ThemeProvider as NextThemeProvider } from "next-themes";
-import { Toaster } from "react-hot-toast";
 
+import { Toaster } from "react-hot-toast";
+import Providers from "@/components/Providers/Providers";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -48,23 +46,10 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
       className={`${poppins.className} h-full bg-white text-base antialiased`}
     >
       <body className="flex  flex-col min-h-[10000px]">
-        <NextIntlClientProvider messages={messages}>
-          <LazyMotion features={domAnimation}>
-            <NextThemeProvider
-              attribute="data-theme"
-              defaultTheme="summer"
-              themes={["spring", "summer", "autumn", "winter"]}
-              enableSystem={false} // optional: disable OS-level theming
-              disableTransitionOnChange // optional: no flicker
-            >
-              
-                <InnerLayout> {children}</InnerLayout>
-           
-
-              <Toaster />
-            </NextThemeProvider>
-          </LazyMotion>
-        </NextIntlClientProvider>
+        <Providers locale={locale} messages={messages}>
+          <InnerLayout>{children}</InnerLayout>
+        </Providers>
+        <Toaster />
       </body>
     </html>
   );
