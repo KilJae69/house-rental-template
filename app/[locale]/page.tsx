@@ -1,5 +1,7 @@
-import { DraggableCards } from "@/components/DraggableCards";
+
+import LazyDraggableCardsWrapper from "@/components/LazyDraggableCards";
 import HeroSection from "@/components/sections/HeroSection";
+
 
 import { Locale, locales } from "@/lib/locales";
 import { Metadata } from "next";
@@ -57,6 +59,8 @@ export async function generateMetadata({
   };
 }
 
+
+
 export default async function Home({
   params,
 }: {
@@ -104,7 +108,7 @@ export default async function Home({
                 priority
               />
             </div> */}
-            <DraggableCards/>
+            <LazyDraggableCardsWrapper/>
         
         </section>
       </div>
