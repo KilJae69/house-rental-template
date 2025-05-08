@@ -1,0 +1,106 @@
+{
+  "Metadata": {
+    "BlogNotFoundTitle": "Blog Post Not Found",
+    "BlogNotFoundDescription": "The blog post you are looking for does not exist.",
+    "ProjectNotFoundTitle": "Case Study Not Found",
+    "ProjectNotFoundDescription": "The case study you are looking for does not exist.",
+    "ogCTA1": "Get started",
+    "ogCTA2": "Learn more",
+    "ogPillBlog": "Blog",
+    "ogPillProject": "Project",
+    "titleHome": "TalentLink BiH | Pilot Program to Solve Bosnia’s Labor Shortage",
+    "descriptionHome": "Join TalentLink BiH pilot program to prototype a fully compliant foreign-staffing platform for Bosnian employers—shape the roadmap, give feedback, and secure early access.",
+    "ogDescriptionHome": "Participate in TalentLink BiH pilot program and help prototype a legal foreign-staffing solution addressing Bosnia’s critical labor shortage.",
+
+    "titleAbout": "TalentLink BiH | Addressing the Labor Shortage in BiH",
+    "descriptionAbout": "Learn about our pilot program co-creating a legal foreign-staffing solution for Bosnian employers. Join us to shape a compliance-first workforce platform.",
+    "ogDescriptionAbout": "Explore our pilot program for legal foreign-staffing in BiH and help co-create an effective workforce solution.",
+
+    "titleContact": "TalentLink BiH | Get in Touch with Our Pilot Team",
+    "descriptionContact": "Reach out to the TalentLink BiH pilot team to learn how you can join our foreign-staffing prototype, share feedback, or become a founding partner. Let’s work together to solve Bosnia’s labor shortage.",
+    "ogDescriptionContact": "Contact TalentLink BiH pilot team to sign up, ask questions, or explore partnership opportunities in building a compliant foreign-staffing solution for BiH."
+  },
+  "NotFound": {
+    "title": "404",
+    "header": "Page not found",
+    "description": "Sorry, we couldn’t find the page you’re looking for.",
+    "homeLink": "Go to the home page"
+  },
+  "Navigation": {
+    "link-home": "home",
+    "link-jobs": "jobs",
+    "link-candidates": "candidates",
+    "link-employers": "employers",
+    "link-about": "about",
+    "link-pricing": "pricing",
+    "link-contact": "contact",
+    "link-gallery": "gallery"
+  },
+  "Header": {
+    "link-our-work": "Projects",
+    "link-process": "Process",
+    "link-blog": "Blog",
+    "link-contact-us": "Contact",
+    "contact-button": "Contact Us",
+    "language-label": "Select language",
+    "language-button": "Language",
+    "language-option-bs": "Bosnian",
+    "language-option-en": "English",
+    "language-option-de": "German",
+    "season-summer":"Summer",
+    "season-winter":"Winter",
+    "season-autumn":"Autumn",
+    "season-spring":"Spring"
+  },
+  "HomePage": {
+    "HeroSection": {
+    "title": "Rediscover Bosnia: Your Retreat Awaits",
+    "subtitle": "Experience our beautiful cabin nestled among scenic landscapes.",
+    "ctaPrimary": "Browse Gallery",
+    "ctaSecondary": "Check Availability"
+  } 
+  },
+  "BookingInquiryForm": {
+    "fields": {
+      "checkIn": {
+        "label": "Check-in Date *",
+        "placeholder": "Select check-in date"
+      },
+      "checkOut": {
+        "label": "Check-out Date *",
+        "placeholder": "Select check-out date"
+      },
+      "name": {
+        "label": "Name *",
+        "placeholder": "Your full name"
+      },
+      "email": {
+        "label": "Email *",
+        "placeholder": "you@example.com"
+      },
+      "message": {
+        "label": "Message (Optional)",
+        "placeholder": "Any special requests or questions?"
+      }
+    },
+    "button": {
+      "submit": "Submit Inquiry",
+      "submitting": "Submitting…"
+    },
+    "validation": {
+      "required": "This field is required.",
+      "checkOutAfter": "Check-out date must be after check-in date.",
+      "nameMax": "Name must be less than 100 characters.",
+      "emailInvalid": "Please enter a valid email address.",
+      "emailMax": "Email must be less than 100 characters.",
+      "messageMax": "Message must be less than 500 characters."
+    },
+    "successMessage": "Your message has been sent successfully!",
+    "errorMessage": "Something went wrong. Please try again later.",
+    "formModal": {
+      "triggerButton":"Send an Inquiry",
+      "modalTitle":"Have questions about our",
+      "paragraph":"Send us an inquiry below ✉️"
+    }
+  }
+}

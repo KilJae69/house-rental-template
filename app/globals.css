@@ -1,26 +1,99 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* 2. Declare the “semantic” tokens once via @theme */
+@theme {
+  --color-primary: #2196F3;
+  --color-primary-light: #6cb2eb;
+  --color-primary-dark: #1e4e8b;
+
+  --color-secondary: #FFAB00;
+  --color-secondary-light: #ffd166;
+  --color-secondary-dark: #cc8a00;
+
+  --color-background: #ffffff;
+  --color-background-light: #f5f5f5;
+  --color-background-dark: #e5e7eb;
+
+  --color-text: #111827;
+  --color-text-light: #4b5563;
+  --color-text-dark: #0f172a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* 3. Override those tokens per-season using data-theme on <html> */
+@layer base {
+  html[data-theme="spring"] {
+    --color-primary: #27ae60;
+    --color-primary-light: #6fd993;
+    --color-primary-dark: #1f7e44;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-secondary: #ffab00;
+    --color-secondary-light:  #ffd166;
+    --color-secondary-dark: #cc8a00;
+
+    --color-background: #f0fdf4;
+    --color-background-light: #ffffff;
+    --color-background-dark: #d1fae5;
+
+    --color-text: #166534;
+    --color-text-light: #4d7c0f;
+    --color-text-dark: #05400a;
+  }
+  html[data-theme="summer"] {
+    --color-secondary: #2196f3;
+    --color-secondary-light: #6cb8f9;
+    --color-secondary-dark: #1a5284;
+
+    --color-primary:  #f1c40f;
+    --color-primary-light: #fce16a;
+    --color-primary-dark:  #bfa108;
+
+    --color-background: #fffbeb;
+    --color-background-light: #ffffff;
+    --color-background-dark: #fef3c7;
+
+    --color-text: #1e293b;
+    --color-text-light: #475569;
+    --color-text-dark: #0f172a;
+  }
+  html[data-theme="autumn"] {
+    --color-primary: #d35400;
+    --color-primary-light: #e9964b;
+    --color-primary-dark: #8e2d00;
+
+    --color-secondary: #8e44ad;
+    --color-secondary-light: #b783cc;
+    --color-secondary-dark: #59287a;
+
+    --color-background: #fff7ed;
+    --color-background-light: #ffffff;
+    --color-background-dark: #fde3c5;
+
+    --color-text: #4a2511;
+    --color-text-light: #7a4a23;
+    --color-text-dark: #2a1108;
+  }
+  html[data-theme="winter"] {
+    --color-primary: #1b4f72;
+    --color-primary-light: #597a9f;
+    --color-primary-dark: #102c40;
+
+    --color-secondary: #5dade2;
+    --color-secondary-light: #9ed3f1;
+    --color-secondary-dark: #3575a7;
+
+    --color-background: #f3f4f6;
+    --color-background-light: #ffffff;
+    --color-background-dark: #d1d5db;
+
+    --color-text: #1f2937;
+    --color-text-light: #4b5563;
+    --color-text-dark: #111827;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.mask-image-bottom {
+  /* fade out the bottom 20% of the element */
+  -webkit-mask-image: linear-gradient(black 90%, transparent 100%);
+  mask-image: linear-gradient(black 90%, transparent 100%);
 }

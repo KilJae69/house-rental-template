@@ -1,0 +1,107 @@
+{
+  "Metadata": {
+    "BlogNotFoundTitle": "Objava na blogu nije pronađena",
+    "BlogNotFoundDescription": "Blog post koji tražite ne postoji.",
+    "ProjectNotFoundTitle": "Studija slučaja nije pronađena",
+    "ProjectNotFoundDescription": "Studija slučaja koju tražite ne postoji.",
+    "ogCTA1": "Započni",
+    "ogCTA2": "Saznaj više",
+    "ogPillBlog": "Blog",
+    "ogPillProject": "Projekt",
+    "titleHome": "TalentLink BiH | Pilot Program za Rješavanje Nedostatka Radne Snage u BiH",
+    "descriptionHome": "Pridružite se pilot-programu TalentLink BiH i su-kreirajte potpuno usklađenu platformu za zapošljavanje stranih radnika u BiH—oblikujte razvojni put, dajte povratne informacije i osigurajte rani pristup.",
+    "ogDescriptionHome": "Sudjelujte u pilot-programu TalentLink BiH i pomozite prototipirati pravno usklađeno rješenje za kritični nedostatak radne snage u BiH.",
+
+    "titleAbout": "TalentLink BiH | Rješavanje Nedostatka Radne Snage u BiH",
+    "descriptionAbout": "Saznajte više o našem pilot programu za su-kreiranje legalnog modela zapošljavanja stranih radnika u BiH. Pridružite nam se i oblikujte budućnost radne snage.",
+    "ogDescriptionAbout": "Istražite naš pilot program za legalno zapošljavanje stranih radnika u BiH i sudjelujte u su-kreiranju učinkovitog rješenja.",
+
+    "titleContact": "TalentLink BiH | Kontaktirajte Naš Pilot Tim",
+    "descriptionContact": "Obratite se TalentLink BiH pilot timu kako biste saznali kako se možete pridružiti našem prototipu zapošljavanja stranih radnika, podijeliti povratne informacije ili postati osnivački partner. Zajedno ćemo riješiti nedostatak radne snage u BiH.",
+    "ogDescriptionContact": "Kontaktirajte TalentLink BiH tim za prijavu, pitanja ili partnerstvo u izradi usklađenog rješenja za zapošljavanje stranih radnika u BiH."
+  },
+  "NotFound": {
+    "title": "404",
+    "header": "Stranica nije pronađena",
+    "description": "Nažalost, nismo mogli pronaći stranicu koju tražite.",
+    "homeLink": "Povratak na početnu stranicu"
+  },
+  "Navigation": {
+    "link-home": "početna",
+    "link-jobs": "poslovi",
+    "link-candidates": "kandidati",
+    "link-employers": "poslodavci",
+    "link-about": "o-nama",
+    "link-pricing": "cijene",
+    "link-contact": "kontakt",
+    "link-gallery": "galerija"
+  },
+  "Header": {
+    "link-our-work": "Projekti",
+    "link-process": "Proces",
+    "link-blog": "Blog",
+    "link-contact-us": "Kontakt",
+    "contact-button": "Kontakt",
+    "language-label": "Izaberite jezik",
+    "language-button": "Jezik",
+    "language-option-bs": "Bosanski",
+    "language-option-en": "Engleski",
+    "language-option-de": "Njemački",
+    "season-summer":"Ljeto",
+    "season-winter":"Zima",
+    "season-autumn":"Jesen",
+    "season-spring":"Proljeće"
+  },
+  "HomePage": {
+    "HeroSection": {
+    "title": "Ponovno otkrijte Bosnu: Vaša oaza čeka",
+    "subtitle": "Doživite našu prekrasnu kolibu smještenu u prekrasnim krajolicima.",
+    "ctaPrimary": "Pogledajte galeriju",
+    "ctaSecondary": "Provjerite Dostupnost"
+  }
+  
+  },
+  "BookingInquiryForm": {
+    "fields": {
+      "checkIn": {
+        "label": "Datum dolaska *",
+        " placeholder": "Odaberite datum dolaska"
+      },
+      "checkOut": {
+        "label": "Datum odlaska *",
+        "placeholder": "Odaberite datum odlaska"
+      },
+      "name": {
+        "label": "Ime *",
+        "placeholder": "Vaše puno ime"
+      },
+      "email": {
+        "label": "Email *",
+        "placeholder": "vaša.email@example.com"
+      },
+      "message": {
+        "label": "Poruka (opcionalno)",
+        "placeholder": "Bilo kakvi posebni zahtjevi ili pitanja?"
+      }
+    },
+    "button": {
+      "submit": "Pošalji upit",
+      "submitting": "Slanje…"
+    },
+    "validation": {
+      "required": "Ovo polje je obavezno.",
+      "checkOutAfter": "Datum odlaska mora biti nakon datuma dolaska.",
+      "nameMax": "Ime mora biti kraće od 100 znakova.",
+      "emailInvalid": "Unesite ispravnu email adresu.",
+      "emailMax": "Email mora biti kraći od 100 znakova.",
+      "messageMax": "Poruka mora biti kraća od 500 znakova."
+    },
+    "successMessage": "Vaša poruka je uspješno poslana!",
+    "errorMessage": "Nešto je pošlo po zlu. Molimo pokušajte ponovo kasnije.",
+    "formModal": {
+      "triggerButton":"Pošaljite Upit",
+      "modalTitle":"Imate pitanja u vezi naše",
+      "paragraph":"Pošaljite nam upit ispod  ✉️"
+    }
+  }
+}
