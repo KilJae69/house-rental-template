@@ -2,7 +2,8 @@
 
 import { ReactNode } from "react";
 
- import Header from "./Header";
+import Header from "./Header";
+import ClientOnly from "./ClientOnly";
 // import Footer from "./Footer";
 
 type InnerLayoutProps = {
@@ -14,7 +15,9 @@ type InnerLayoutProps = {
 export default function InnerLayout({ children }: InnerLayoutProps) {
   return (
     <>
-      <Header /> 
+      <ClientOnly>
+        <Header />
+      </ClientOnly>
       <div className="relative flex flex-auto overflow-hidden bg-white ">
         <div className="relative isolate flex w-full flex-col ">
           <main className="w-full flex-auto min-h-[10000px]">{children}</main>

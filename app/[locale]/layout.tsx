@@ -1,3 +1,4 @@
+
 import { Locale, locales } from "@/lib/locales";
 import { routing } from "../../i18n/routing";
 import { notFound } from "next/navigation";
@@ -9,7 +10,7 @@ import "@/app/globals.css";
 import InnerLayout from "@/components/InnerLayout";
 import { ThemeProvider as NextThemeProvider } from "next-themes";
 import { Toaster } from "react-hot-toast";
-import ClientOnly from "@/components/ClientOnly";
+
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -56,9 +57,9 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
               enableSystem={false} // optional: disable OS-level theming
               disableTransitionOnChange // optional: no flicker
             >
-              <ClientOnly>
+              
                 <InnerLayout> {children}</InnerLayout>
-              </ClientOnly>
+           
 
               <Toaster />
             </NextThemeProvider>

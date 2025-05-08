@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { SEASON_ICONS } from "@/constants/assetsData";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import ClientOnly from "../ClientOnly";
 
 // Extract the exact href type of your next-intl Link
 type LinkHref = ComponentProps<typeof Link>["href"];
@@ -42,21 +43,31 @@ export default function PrimaryThemedButton({
 
   if (href) {
     return (
-      <Link href={href} className={classes} aria-disabled={disabled}>
-        {children}
-        <Image src={iconSrc} className="absolute left-1/2 -translate-x-1/2 -z-10 top-0 opacity-0 transition group-hover:opacity-100 group-hover:-translate-y-6" alt="" width={20} height={20} />
-      </Link>
+      <ClientOnly>
+        <Link href={href} className={classes} aria-disabled={disabled}>
+          {children}
+          <Image
+            src={iconSrc}
+            className="absolute left-1/2 -translate-x-1/2 -z-10 top-0 opacity-0 transition group-hover:opacity-100 group-hover:-translate-y-6"
+            alt=""
+            width={20}
+            height={20}
+          />
+        </Link>
+      </ClientOnly>
     );
   }
 
   return (
-    <button
-      type="button"
-      className={classes}
-      disabled={disabled}
-      aria-disabled={disabled}
-    >
-      {children}
-    </button>
+    <ClientOnly>
+      <button
+        type="button"
+        className={classes}
+        disabled={disabled}
+        aria-disabled={disabled}
+      >
+        {children}
+      </button>
+    </ClientOnly>
   );
 }
