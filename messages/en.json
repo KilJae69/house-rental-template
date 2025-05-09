@@ -47,18 +47,58 @@
     "language-option-bs": "Bosnian",
     "language-option-en": "English",
     "language-option-de": "German",
-    "season-summer":"Summer",
-    "season-winter":"Winter",
-    "season-autumn":"Autumn",
-    "season-spring":"Spring"
+    "season-summer": "Summer",
+    "season-winter": "Winter",
+    "season-autumn": "Autumn",
+    "season-spring": "Spring"
   },
   "HomePage": {
     "HeroSection": {
-    "title": "Rediscover Bosnia: Your Retreat Awaits",
-    "subtitle": "Experience our beautiful cabin nestled among scenic landscapes.",
-    "ctaPrimary": "Browse Gallery",
-    "ctaSecondary": "Check Availability"
-  } 
+      "title": "Rediscover Bosnia: Your Retreat Awaits",
+      "subtitle": "Experience our beautiful cabin nestled among scenic landscapes.",
+      "ctaPrimary": "Browse Gallery",
+      "ctaSecondary": "Check Availability"
+    },
+    "aboutSection": {
+      "title": "About This Retreat",
+      "body": "Nestled in the heart of Una National Park, our hand-crafted cabin welcomes you through all four seasons. In spring, wake up to blooming wildflowers and the gentle song of birds; summer brings warm days spent kayaking the river and lounging on the deck; autumn paints the forest in fiery reds and golds perfect for cozy hikes; and winter transforms the landscape into a snowy wonderland ideal for skiing and fireside stories. With comfort and style year-round, we offer personalized excursions—canoeing, mountain biking, stargazing dinners—and authentic Bosnian hospitality to make every stay unforgettable.",
+      "learnMore": "Learn More"
+    },
+    "propertyDetails": {
+      "title": "Property Details",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "livingArea": "Living Area",
+      "lotSize": "Lot Size",
+      "yearBuilt": "Year Built",
+      "stories": "Stories"
+    },
+    "featuresSection": {
+      "title": "Amenities & Features",
+      "amenities": {
+        "heatedFloors": "Heated Floors",
+        "fireplace": "Fireplace",
+        "framelessGlassShower": "Frameless Glass Shower",
+        "hardwoodFloors": "Hardwood Floors",
+        "highSpeedWifi": "High-Speed Wi-Fi",
+        "mountainViews": "Mountain Views",
+        "outdoorGrill": "Outdoor Grill",
+        "hotTub": "Hot Tub",
+        "smartTv": "Smart TV",
+        "petFriendly": "Pet Friendly",
+        "parking": "Free Parking",
+        "pool": "Swimming Pool",
+        "airConditioning": "Air Conditioning",
+        "kitchen": "Full Kitchen",
+        "washerDryer": "Washer & Dryer",
+        "workspace": "Dedicated Workspace",
+        "breakfast": "Breakfast Included",
+        "selfCheckin": "Self Check-in",
+        "hotWater": "24/7 Hot Water",
+        "fireExtinguisher": "Fire Extinguisher",
+        "firstAidKit": "First Aid Kit"
+      }
+    }
   },
   "BookingInquiryForm": {
     "fields": {
@@ -98,9 +138,9 @@
     "successMessage": "Your message has been sent successfully!",
     "errorMessage": "Something went wrong. Please try again later.",
     "formModal": {
-      "triggerButton":"Send an Inquiry",
-      "modalTitle":"Have questions about our",
-      "paragraph":"Send us an inquiry below ✉️"
+      "triggerButton": "Send an Inquiry",
+      "modalTitle": "Have questions about our",
+      "paragraph": "Send us an inquiry below ✉️"
     }
   }
 }

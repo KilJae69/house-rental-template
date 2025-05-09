@@ -37,7 +37,7 @@ export default function HeroSection() {
       /> */}
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-transparent" />
+      
 
       {/* Content */}
       <div className="relative z-10 max-w-2xl   h-fit  flex flex-col justify-center  px-4 text-center">
@@ -81,7 +81,7 @@ export default function HeroSection() {
             duration: 0.8,
             delay: 1,
           }} className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
-          <PrimaryThemedButton variant="outline" href={`/gallery`}>
+          <PrimaryThemedButton variant="outline"  href={`/gallery`}>
             {primary}
           </PrimaryThemedButton>
           {/* <PrimaryThemedButton

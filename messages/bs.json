@@ -47,19 +47,58 @@
     "language-option-bs": "Bosanski",
     "language-option-en": "Engleski",
     "language-option-de": "Njemački",
-    "season-summer":"Ljeto",
-    "season-winter":"Zima",
-    "season-autumn":"Jesen",
-    "season-spring":"Proljeće"
+    "season-summer": "Ljeto",
+    "season-winter": "Zima",
+    "season-autumn": "Jesen",
+    "season-spring": "Proljeće"
   },
   "HomePage": {
     "HeroSection": {
-    "title": "Ponovno otkrijte Bosnu: Vaša oaza čeka",
-    "subtitle": "Doživite našu prekrasnu kolibu smještenu u prekrasnim krajolicima.",
-    "ctaPrimary": "Pogledajte galeriju",
-    "ctaSecondary": "Provjerite Dostupnost"
-  }
-  
+      "title": "Ponovno otkrijte Bosnu: Vaša oaza čeka",
+      "subtitle": "Doživite našu prekrasnu kolibu smještenu u prekrasnim krajolicima.",
+      "ctaPrimary": "Pogledajte galeriju",
+      "ctaSecondary": "Provjerite Dostupnost"
+    },
+    "aboutSection": {
+      "title": "O ovom odmorištu",
+      "body": "Skrivena u srcu Nacionalnog parka Una, naša ručno izrađena koliba otvorena je tijekom svih četiri sezone. U proljeće vas bude cvjetni mirisi i ptičji žamor; ljeto mami toplim danima uz vožnju kajakom rijekom i opuštanje na terasi; jesen prekriva šume vatrenim nijansama crvene i zlatne, savršenima za ugodne šetnje; a zima pretvara okolinu u snježnu bajku idealnu za skijanje i priče uz topli kamin. S udobnošću i stilom tijekom cijele godine, nudimo organizirane izlete—vožnja čamcem, planinski biciklizam, večere pod zvijezdama—uz autentičnu bosansku gostoljubivost koja svaki boravak čini nezaboravnim.",
+      "learnMore": "Saznaj Više"
+    },
+    "propertyDetails": {
+      "title": "Detalji Nekretnine",
+      "bedrooms": "Spavaće sobe",
+      "bathrooms": "Kupaonice",
+      "livingArea": "Površina",
+      "lotSize": "Veličina placa",
+      "yearBuilt": "Godina izgradnje",
+      "stories": "Spratova"
+    },
+    "featuresSection": {
+      "title": "Usluge i Značajke",
+      "amenities": {
+        "heatedFloors": "Ugrijani podovi",
+        "fireplace": "Kamin",
+        "framelessGlassShower": "Tuš bez okvira",
+        "hardwoodFloors": "Drveni podovi",
+        "highSpeedWifi": "Brzi Wi-Fi",
+        "mountainViews": "Pogled na planine",
+        "outdoorGrill": "Roštilj na otvorenom",
+        "hotTub": "Vruća kada",
+        "smartTv": "Pametni TV",
+        "petFriendly": "Prijateljski prema kućnim ljubimcima",
+        "parking": "Besplatan parking",
+        "pool": "Bazen",
+        "airConditioning": "Klima uređaj",
+        "kitchen": "Potpuna kuhinja",
+        "washerDryer": "Perilica i sušilica",
+        "workspace": "Radni prostor",
+        "breakfast": "Doručak uključen",
+        "selfCheckin": "Samostalna prijava",
+        "hotWater": "Vruća voda 24/7",
+        "fireExtinguisher": "Protupožarni aparat",
+        "firstAidKit": "Prva pomoć"
+      }
+    }
   },
   "BookingInquiryForm": {
     "fields": {
@@ -99,9 +138,9 @@
     "successMessage": "Vaša poruka je uspješno poslana!",
     "errorMessage": "Nešto je pošlo po zlu. Molimo pokušajte ponovo kasnije.",
     "formModal": {
-      "triggerButton":"Pošaljite Upit",
-      "modalTitle":"Imate pitanja u vezi naše",
-      "paragraph":"Pošaljite nam upit ispod  ✉️"
+      "triggerButton": "Pošaljite Upit",
+      "modalTitle": "Imate pitanja u vezi naše",
+      "paragraph": "Pošaljite nam upit ispod  ✉️"
     }
   }
 }

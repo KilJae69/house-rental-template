@@ -26,6 +26,7 @@ export default function ParallaxBg({ image }: { image: string }) {
         className="object-cover mask-image-bottom"
         alt=""
       />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/60 to-transparent" />
     </m.div>
   );
 }
