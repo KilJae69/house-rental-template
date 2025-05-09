@@ -23,6 +23,7 @@ export default function ParallaxBg({ image }: { image: string }) {
       <Image
         src={image}
         fill
+        priority
         className="object-cover mask-image-bottom"
         alt=""
       />
