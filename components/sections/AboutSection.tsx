@@ -7,8 +7,9 @@ import { Container } from "../shared/Container";
 import { useTranslations } from "next-intl";
 
 import PrimaryThemedButton from "../shared/PrimaryThemedButton";
+import SwiperComponent from "../SwiperComponent";
 
-import LazySwiperInView from "../LazySwiperInView";
+
 
 
 export default function AboutSection() {
@@ -42,7 +43,7 @@ export default function AboutSection() {
          
           className="mx-auto grid md:grid-cols-2 gap-8 items-center"
         >
-         <LazySwiperInView/>
+          <SwiperComponent/>
 
           <div>
             <h2 className="text-3xl font-bold text-[var(--color-primary-dark)] mb-4">

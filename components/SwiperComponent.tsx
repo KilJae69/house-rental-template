@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-
+import "swiper/css";
+import "swiper/css/effect-cards";
 import { photosData } from "@/constants/photosData";
 import Image from "next/image";
 import PrimaryThemedButton from "./shared/PrimaryThemedButton";
@@ -13,7 +14,7 @@ export default function SwiperComponent() {
     
   return (
     <div ref={ref}>
-      {SwiperComponent && (
+      {SwiperComponent ? (
         <SwiperComponent
           effect={"cards"}
           grabCursor={true}
@@ -44,7 +45,22 @@ export default function SwiperComponent() {
             </div>
           </SwiperSlideComponent>
         </SwiperComponent>
-      )}
+      ): <Skeleton/>}
+    </div>
+  );
+}
+
+// 2) One single skeleton placeholder
+function Skeleton() {
+  return (
+    <div className="flex items-center justify-center w-[280px] h-[400px]
+                    sm:w-[400px] md:w-[300px] lg:w-[500px] ">
+      <Image
+        src="/bouncing-circles.svg"
+        width={100}
+        height={100}
+        alt="Loading"
+      />
     </div>
   );
 }
