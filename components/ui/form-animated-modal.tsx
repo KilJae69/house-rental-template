@@ -108,14 +108,14 @@ export const ModalBody = ({
             opacity: 0,
             backdropFilter: "blur(0px)",
           }}
-          className="fixed [perspective:800px] [transform-style:preserve-3d] inset-0 h-full w-full overflow-hidden flex items-center justify-center z-50"
+          className="fixed [perspective:800px] [transform-style:preserve-3d] inset-0 h-full w-full overflow-hidden flex items-center justify-center z-[1000]"
         >
           {/* <Overlay /> */}
 
           <m.div
             ref={modalRef}
             className={cn(
-              "min-h-[50%] max-h-[90%] md:max-w-[80%] border xl:max-w-[800px] bg-gradient-to-b from-[var(--color-primary-dark)] via-white to-white border-[var(--color-primary-dark)]  md:rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden",
+              "min-h-[50%] max-h-[90%] md:max-w-[80%] border xl:max-w-[800px] bg-white border-[var(--color-primary-dark)]  md:rounded-2xl relative z-50 flex flex-col flex-1 overflow-auto",
               className
             )}
             initial={{
@@ -159,7 +159,7 @@ export const ModalContent = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex flex-col flex-1 p-8 md:p-10", className)}>
+    <div className={cn("flex flex-col flex-1  ", className)}>
       {children}
     </div>
   );
@@ -175,7 +175,7 @@ export const ModalFooter = ({
   return (
     <div
       className={cn(
-        "flex justify-end p-4 bg-gray-100 dark:bg-neutral-900",
+        "flex justify-end p-4 bg-gray-100 ",
         className
       )}
     >

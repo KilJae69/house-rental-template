@@ -64,6 +64,11 @@
       "body": "Nestled in the heart of Una National Park, our hand-crafted cabin welcomes you through all four seasons. In spring, wake up to blooming wildflowers and the gentle song of birds; summer brings warm days spent kayaking the river and lounging on the deck; autumn paints the forest in fiery reds and golds perfect for cozy hikes; and winter transforms the landscape into a snowy wonderland ideal for skiing and fireside stories. With comfort and style year-round, we offer personalized excursions—canoeing, mountain biking, stargazing dinners—and authentic Bosnian hospitality to make every stay unforgettable.",
       "learnMore": "Learn More"
     },
+    "photosSection": {
+      "title": "Photos of Our Property",
+      "description": "Browse through our hand-picked gallery to see every corner of the cabin—from the welcoming living room and gourmet kitchen to the sun-drenched deck and forested surroundings. Each image captures the unique beauty and comfort you’ll experience during your stay.",
+      "cta": "Photos Gallery"
+    },
     "propertyDetails": {
       "title": "Property Details",
       "bedrooms": "Bedrooms",

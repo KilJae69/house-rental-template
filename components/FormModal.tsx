@@ -32,8 +32,11 @@ export function FormModal() {
             <MdAttachEmail className="size-5" />
           </div>
         </ModalTrigger>
-        <ModalBody className="">
+        <ModalBody className="scroll-y-auto">
           <ModalContent>
+            <div className="bg-gradient-to-b text-center from-[var(--color-primary-dark)] via-[var(--color-primary)] px-4 lg:px-8 pt-4 lg:pt-8 to-white">
+
+           
             <h3 className="text-lg md:text-2xl text-white font-bold text-center ">
               <span>{t("formModal.modalTitle")}</span>{" "}
               <span className="px-1 py-0.5 rounded-md text-[var(--color-primary-dark)] bg-gray-100  border border-gray-200">
@@ -71,7 +74,8 @@ export function FormModal() {
                 </m.div>
               ))}
             </div>
-            <div className="mt-8">
+            </div>
+            <div className="mt-8 px-4 lg:px-8 pb-4 lg:pb-8">
               <BookingInquiryForm />
             </div>
           </ModalContent>
