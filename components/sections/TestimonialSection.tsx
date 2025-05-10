@@ -1,5 +1,5 @@
 import { AvatarCloud } from "../AvatarCloud";
-import { MarqueeTestimonials } from "../MarqueeTestimonials";
+// import { MarqueeTestimonials } from "../MarqueeTestimonials";
 import { Container } from "../shared/Container";
 
 export default function TestimonialSection() {
@@ -22,10 +22,10 @@ export default function TestimonialSection() {
 
           <AvatarCloud />
         </div>
-        <div className="mt-12">
-          <MarqueeTestimonials />
-        </div>
       </Container>
+        {/* <div className="mt-12">
+          <MarqueeTestimonials />
+        </div> */}
     </section>
   );
 }
