@@ -2,6 +2,7 @@ import AboutSection from "@/components/sections/AboutSection";
 // import DragCardsSection from "@/components/sections/DragCardsSection";
 import HeroSection from "@/components/sections/HeroSection";
 import PlayVideoSection from "@/components/sections/PlayVideoSection";
+import TestimonialSection from "@/components/sections/TestimonialSection";
 
 
 import { Locale, locales } from "@/lib/locales";
@@ -77,6 +78,7 @@ export default async function Home({
       <HeroSection />
       <AboutSection/>
      <PlayVideoSection/>
+     <TestimonialSection/>
       {/* <DragCardsSection/> */}
     </>
   );

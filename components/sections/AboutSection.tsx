@@ -71,7 +71,9 @@ export default function AboutSection() {
           <h3 className="text-2xl lg:text-3xl font-semibold text-[var(--color-primary-dark)] mb-6">
             {t("propertyDetails.title")}
           </h3>
-          <FadeInStagger className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+          <FadeInStagger className="">
+            <dl className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+
             {[
               [t("propertyDetails.bedrooms"), "3"],
               [t("propertyDetails.bathrooms"), "2"],
@@ -90,6 +92,7 @@ export default function AboutSection() {
                 <dd className="text-[var(--color-text-dark)]">{value}</dd>
               </FadeIn>
             ))}
+            </dl>
           </FadeInStagger>
         </div>
         <FeaturesSection />
