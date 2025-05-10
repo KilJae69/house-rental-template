@@ -60,8 +60,8 @@
       "ctaSecondary": "Check Availability"
     },
     "aboutSection": {
-      "title": "About This Retreat",
-      "body": "Nestled in the heart of Una National Park, our hand-crafted cabin welcomes you through all four seasons. In spring, wake up to blooming wildflowers and the gentle song of birds; summer brings warm days spent kayaking the river and lounging on the deck; autumn paints the forest in fiery reds and golds perfect for cozy hikes; and winter transforms the landscape into a snowy wonderland ideal for skiing and fireside stories. With comfort and style year-round, we offer personalized excursions—canoeing, mountain biking, stargazing dinners—and authentic Bosnian hospitality to make every stay unforgettable.",
+      "title": "About Our Retreat",
+      "body": "Nestled in the heart of Una National Park, our hand-crafted cabin welcomes you through all four seasons. In <spring>spring</spring>, wake up to blooming wildflowers and the gentle song of birds; <summer>summer</summer> brings warm days spent kayaking the river and lounging on the deck; <autumn>autumn</autumn> paints the forest in fiery reds and golds perfect for cozy hikes; and <winter>winter</winter> transforms the landscape into a snowy wonderland ideal for skiing and fireside stories. With comfort and style year-round, we offer personalized excursions—canoeing, mountain biking, stargazing dinners—and authentic Bosnian hospitality to make every stay unforgettable.",
       "learnMore": "Learn More"
     },
     "photosSection": {
@@ -103,6 +103,10 @@
         "fireExtinguisher": "Fire Extinguisher",
         "firstAidKit": "First Aid Kit"
       }
+    },
+    "videoSection": {
+      "title": "Take a Video Tour",
+      "description": "Step inside and explore every corner of our cozy cabin with this immersive video stroll—see the sunlit living room, the fully equipped kitchen, and the panoramic views that surround you. Press play and let us guide you through the heart of Una National Park from the comfort of your screen."
     }
   },
   "BookingInquiryForm": {

@@ -19,3 +19,15 @@ export const SEASON_ICONS: Record<string, string> = {
     autumn: "/images/fall-hero.png",
     winter: "/images/winter-hero.png",
   };
+ export const VIDEO_SECTION_ASSETS_1: Record<string, string> = {
+    spring: "/svg/trees-spring.svg",
+    summer: "/svg/sun-summer.svg",
+    autumn: "/svg/acorn.svg",
+    winter: "/svg/snowman-winter.svg",
+  };
+ export const VIDEO_SECTION_ASSETS_2: Record<string, string> = {
+    spring: "/svg/leaf-spring.svg",
+    summer: "/svg/cocktail-summer.svg",
+    autumn: "/svg/autumn-leaf.svg",
+    winter: "/svg/snowflake-winter.svg",
+  };

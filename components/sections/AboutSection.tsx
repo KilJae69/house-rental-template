@@ -1,5 +1,3 @@
-
-
 import { AnimatedBeamMultipleOutputs } from "../AnimatedBeamMultipleOutputs";
 import { FadeIn, FadeInStagger } from "../shared/FadeIn";
 import FeaturesSection from "./FeaturesSection";
@@ -9,9 +7,6 @@ import { useTranslations } from "next-intl";
 import PrimaryThemedButton from "../shared/PrimaryThemedButton";
 import SwiperComponent from "../SwiperComponent";
 
-
-
-
 export default function AboutSection() {
   const t = useTranslations("HomePage");
 
@@ -20,15 +15,32 @@ export default function AboutSection() {
       as="section"
       className="pb-12 lg:pb-24 bg-[var(--color-background-light)]"
     >
-      <div className="space-y-10">
+      <div className="space-y-12 lg:space-y-24">
         <div className=" mx-auto grid md:grid-cols-2 gap-8 items-center ">
           {/* Text */}
           <div>
-            <h2 className="text-3xl font-bold text-[var(--color-primary-dark)] mb-4">
+            <h2 className="text-3xl lg:text-5xl font-bold text-[var(--color-primary-dark)] mb-4">
               {t("aboutSection.title")}
             </h2>
             <p className="text-lg text-[var(--color-text-dark)] mb-6">
-              {t("aboutSection.body")}
+              {t.rich("aboutSection.body", {
+                spring: (chunks) => (
+                  <span className="text-green-600 font-semibold">{chunks}</span>
+                ),
+                summer: (chunks) => (
+                  <span className="text-yellow-400 font-semibold">
+                    {chunks}
+                  </span>
+                ),
+                autumn: (chunks) => (
+                  <span className="text-orange-500 font-semibold">
+                    {chunks}
+                  </span>
+                ),
+                winter: (chunks) => (
+                  <span className="text-blue-400 font-semibold">{chunks}</span>
+                ),
+              })}
             </p>
             {/* <PrimaryThemedButton>{t("aboutSection.learnMore")}</PrimaryThemedButton> */}
           </div>
@@ -39,16 +51,15 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div
-         
-          className="mx-auto grid md:grid-cols-2 gap-8 items-center"
-        >
-          <SwiperComponent/>
+        <div className="mx-auto grid md:grid-cols-2 gap-8 items-center">
+          <div className="order-2 md:order-1">
+            <SwiperComponent />
+          </div>
 
-          <div>
-            <h2 className="text-3xl font-bold text-[var(--color-primary-dark)] mb-4">
+          <div className="order-1 md:order-2 text-center md:text-start">
+            <h3 className="text-2xl lg:text-3xl font-bold text-[var(--color-primary-dark)] mb-4">
               {t("photosSection.title")}
-            </h2>
+            </h3>
             <p className="text-lg text-[var(--color-text-dark)] mb-6">
               {t("photosSection.description")}
             </p>
@@ -57,7 +68,7 @@ export default function AboutSection() {
         </div>
 
         <div className=" mx-auto ">
-          <h3 className="text-2xl font-semibold text-[var(--color-primary-dark)] mb-6">
+          <h3 className="text-2xl lg:text-3xl font-semibold text-[var(--color-primary-dark)] mb-6">
             {t("propertyDetails.title")}
           </h3>
           <FadeInStagger className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
@@ -86,3 +97,4 @@ export default function AboutSection() {
     </Container>
   );
 }
+

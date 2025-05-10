@@ -60,8 +60,8 @@
       "ctaSecondary": "Provjerite Dostupnost"
     },
     "aboutSection": {
-      "title": "O ovom odmorištu",
-      "body": "Skrivena u srcu Nacionalnog parka Una, naša ručno izrađena koliba otvorena je tijekom svih četiri sezone. U proljeće vas bude cvjetni mirisi i ptičji žamor; ljeto mami toplim danima uz vožnju kajakom rijekom i opuštanje na terasi; jesen prekriva šume vatrenim nijansama crvene i zlatne, savršenima za ugodne šetnje; a zima pretvara okolinu u snježnu bajku idealnu za skijanje i priče uz topli kamin. S udobnošću i stilom tijekom cijele godine, nudimo organizirane izlete—vožnja čamcem, planinski biciklizam, večere pod zvijezdama—uz autentičnu bosansku gostoljubivost koja svaki boravak čini nezaboravnim.",
+      "title": "O našem odmorištu",
+      "body": "Skrivena u srcu Nacionalnog parka Una, naša ručno izrađena koliba otvorena je tijekom sve četiri sezone. U <spring>proljeće</spring> vas bude cvjetni mirisi i ptičji žamor; <summer>ljeto</summer> mami toplim danima uz vožnju kajakom rijekom i opuštanje na terasi; <autumn>jesen</autumn> prekriva šume vatrenim nijansama crvene i zlatne, savršenima za ugodne šetnje; a <winter>zima</winter> pretvara okolinu u snježnu bajku idealnu za skijanje i priče uz topli kamin. S udobnošću i stilom tijekom cijele godine, nudimo organizirane izlete—vožnja čamcem, planinski biciklizam, večere pod zvijezdama—uz autentičnu bosansku gostoljubivost koja svaki boravak čini nezaboravnim.",
       "learnMore": "Saznaj Više"
     },
     "photosSection": {
@@ -103,7 +103,11 @@
         "fireExtinguisher": "Protupožarni aparat",
         "firstAidKit": "Prva pomoć"
       }
-    }
+    },
+    "videoSection": {
+    "title": "Pogledajte Video",
+    "description": "Zavirite u svaki kutak naše udobne kolibe kroz ovu impresivnu video-turu—pogledajte sunčani dnevni boravak, potpuno opremljenu kuhinju i panoramski pogled koji vas okružuje. Pritisnite play i dopustite nam da vas povedemo srcem Nacionalnog parka Una iz udobnosti vašeg ekrana."
+  }
   },
   "BookingInquiryForm": {
     "fields": {

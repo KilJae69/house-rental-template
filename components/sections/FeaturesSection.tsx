@@ -22,7 +22,7 @@ export default function FeaturesSection() {
   return (
     
       <div className=" mx-auto ">
-        <h3 className="text-2xl font-semibold text-[var(--color-primary-dark)] mb-6">
+        <h3 className="text-2xl lg:text-3xl font-semibold text-[var(--color-primary-dark)] mb-6">
         {t("featuresSection.title")}
         </h3>
         <ul className="flex flex-wrap gap-3">
