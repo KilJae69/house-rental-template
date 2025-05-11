@@ -31,3 +31,10 @@ export const SEASON_ICONS: Record<string, string> = {
     autumn: "/svg/autumn-leaf.svg",
     winter: "/svg/snowflake-winter.svg",
   };
+
+  export const CAMERA_ASSETS: Record<string, string> = {
+    spring: "/images/camera/spring-camera.png",
+    summer: "/images/camera/summer-camera.png",
+    autumn: "/images/camera/autumn-camera.png",
+    winter: "/images/camera/winter-camera.png",
+  };
