@@ -107,6 +107,40 @@
     "videoSection": {
     "title": "Pogledajte Video",
     "description": "Zavirite u svaki kutak naše udobne kolibe kroz ovu impresivnu video-turu—pogledajte sunčani dnevni boravak, potpuno opremljenu kuhinju i panoramski pogled koji vas okružuje. Pritisnite play i dopustite nam da vas povedemo srcem Nacionalnog parka Una iz udobnosti vašeg ekrana."
+  },
+  "testimonialSection": {
+    "title": "Iskustva Gostiju",
+    "description": "<strong>Pridružite se stotinama zadovoljnih posjetilaca iz cijelog svijeta</strong>—bilo da želite uživati u proljetnim cvjetovima ili zimskoj idili prekrivenoj snijegom—naša Cozy Cabin pruža toplu gostoljubivost, zadivljujuće poglede i jedinstvena lokalna iskustva u srcu Nacionalnog parka Una.",
+    "testimonials": {
+      "jack": {
+        "country": "SAD",
+        "body": "Nisam očekivao toliku toplinu i gostoprimstvo—ova koliba zaista miriše na dom."
+      },
+      "jill": {
+        "country": "VB",
+        "body": "Potpuno čarobno utočište! Svaki detalj je bio besprijekoran, a pogled oduzima dah."
+      },
+      "mahmoud": {
+        "country": "Saudijska Arabija",
+        "body": "Prekrasno bijeg u prirodu. Domaćini su se potrudili da nam boravak bude što ugodniji."
+      },
+      "diego": {
+        "country": "Španija",
+        "body": "Od proljetnih cvjetova do zimskog snijega—svaka sezona je ovdje zadivljujuća. Topla preporuka!"
+      },
+      "mehmed": {
+        "country": "Turska",
+        "body": "Ugodno, rustikalno i savršeno opremljeno—sigurno se vraćamo svake godine."
+      },
+      "nour": {
+        "country": "UAE",
+        "body": "Mirno, slikovito i puno lokalnog šarma. Doživljaj koji ću još dugo pamtiti."
+      },
+      "francesca": {
+        "country": "Italija",
+        "body": "Naša porodica je oduševljena—prostrano, besprijekorno i u samom srcu netaknute prirode."
+      }
+    }
   }
   },
   "BookingInquiryForm": {

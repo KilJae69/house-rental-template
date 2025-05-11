@@ -8,26 +8,25 @@ import useLazyLoad from "@/lib/hooks/useLazyLoad";
 
 const images = [
   "/images/avatars/3d-avatar.png",
+  "/images/avatars/3d-avatar-1.png",
+  "/images/avatars/3d-avatar-2.png",
+  "/images/avatars/3d-avatar-3.png",
+  "/images/avatars/3d-avatar-4.png",
+  "/images/avatars/3d-avatar-5.png",
+  "/images/avatars/3d-avatar-6.png",
   "/images/avatars/3d-avatar.png",
-  "/images/avatars/3d-avatar.png",
-  "/images/avatars/3d-avatar.png",
-  "/images/avatars/3d-avatar.png",
-  "/images/avatars/3d-avatar.png",
-  "/images/avatars/3d-avatar.png",
-  "/images/avatars/3d-avatar.png",
-  "/images/avatars/3d-avatar.png",
-  "/images/avatars/3d-avatar.png",
-  "/images/avatars/3d-avatar.png",
-  "/images/avatars/3d-avatar.png",
-  "/images/avatars/3d-avatar.png",
-  "/images/avatars/3d-avatar.png",
-  "/images/avatars/3d-avatar.png",
+  "/images/avatars/3d-avatar-1.png",
+
+  
+
 ];
+
 
 const DynamicIconCloud = dynamic(
   () => import("@/components/ui/icon-cloud").then((mod) => mod.IconCloud),
   {
     ssr: false,
+    loading: () => <Skeleton/>,
   }
 );
 
@@ -54,20 +53,25 @@ export function AvatarCloud() {
           alt="svg bg shape"
         />
       </div>
-      {isLoaded ? <DynamicIconCloud images={images} /> : <Skeleton />}
+      {isLoaded ? (
+        <DynamicIconCloud images={images} />
+      ) : (
+        <Skeleton />
+      )}
     </div>
   );
 }
 
 function Skeleton() {
   return (
-    <div className="flex items-center justify-center size-[300px] ">
+    <div className="flex items-center relative justify-center size-[500px] ">
       <Image
         src="/bouncing-circles.svg"
         width={100}
         height={100}
         alt="Loading"
       />
+     
     </div>
   );
 }

@@ -107,6 +107,40 @@
     "videoSection": {
       "title": "Take a Video Tour",
       "description": "Step inside and explore every corner of our cozy cabin with this immersive video stroll—see the sunlit living room, the fully equipped kitchen, and the panoramic views that surround you. Press play and let us guide you through the heart of Una National Park from the comfort of your screen."
+    },
+    "testimonialSection": {
+      "title": "What Our Guests Say",
+      "description": "<strong>Join hundreds of happy visitors from across the globe</strong>—whether you’re chasing spring blooms or a snowy winter retreat—our Cozy Cabin delivers warm hospitality, breathtaking views, and bespoke local experiences in the heart of Una National Park.",
+      "testimonials": {
+        "jack": {
+          "country": "USA",
+          "body": "I never expected such warmth and hospitality—this cabin truly feels like home."
+        },
+        "jill": {
+          "country": "UK",
+          "body": "Absolutely magical retreat! Every detail was perfect and the views are stunning."
+        },
+        "mahmoud": {
+          "country": "Saudi Arabia",
+          "body": "A wonderful escape in nature. The hosts went above and beyond to make us comfortable."
+        },
+        "diego": {
+          "country": "Spain",
+          "body": "From spring blossoms to winter snow, every season here is breathtaking. Highly recommended!"
+        },
+        "mehmed": {
+          "country": "Turkey",
+          "body": "Cozy, rustic, and so well-appointed—I’ll be coming back every year."
+        },
+        "nour": {
+          "country": "UAE",
+          "body": "Peaceful, picturesque, and full of local charm. An experience I won’t soon forget."
+        },
+        "francesca": {
+          "country": "Italy",
+          "body": "Our family loved the cabin—spacious, spotless, and nestled in absolute serenity."
+        }
+      }
     }
   },
   "BookingInquiryForm": {

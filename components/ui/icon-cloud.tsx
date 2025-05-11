@@ -21,7 +21,12 @@ function easeOutCubic(t: number): number {
   return 1 - Math.pow(1 - t, 3);
 }
 
-const ICON_SIZE = 70;
+const ICON_SIZE = 60;
+const SPHERE_RADIUS = ICON_SIZE * 3;
+const CAMERA_DISTANCE = SPHERE_RADIUS * 2;
+const SCALE_DIVISOR   = SPHERE_RADIUS * 1.5;
+const SVG_BASE = 100;
+const svgScale = ICON_SIZE / SVG_BASE;
 
 export function IconCloud({ icons, images }: IconCloudProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -80,7 +85,7 @@ export function IconCloud({ icons, images }: IconCloudProps) {
           };
         } else {
           // Handle SVG icons
-          offCtx.scale(0.4, 0.4);
+          offCtx.scale(svgScale, svgScale);
           const svgString = renderToString(item as React.ReactElement);
           const img = new Image();
           img.src = "data:image/svg+xml;base64," + btoa(svgString);
@@ -116,9 +121,9 @@ export function IconCloud({ icons, images }: IconCloudProps) {
       const z = Math.sin(phi) * r;
 
       newIcons.push({
-        x: x * 100,
-        y: y * 100,
-        z: z * 100,
+        x: x * SPHERE_RADIUS,
+        y: y * SPHERE_RADIUS,
+        z: z * SPHERE_RADIUS,
         scale: 1,
         opacity: 1,
         id: i,
@@ -151,7 +156,7 @@ export function IconCloud({ icons, images }: IconCloudProps) {
       const screenX = canvasRef.current!.width / 2 + rotatedX;
       const screenY = canvasRef.current!.height / 2 + rotatedY;
 
-      const scale = (rotatedZ + 200) / 300;
+      const scale = (rotatedZ + CAMERA_DISTANCE) / SCALE_DIVISOR;
       const radius = (ICON_SIZE/2) * scale;
       const dx = x - screenX;
       const dy = y - screenY;
@@ -264,8 +269,8 @@ export function IconCloud({ icons, images }: IconCloudProps) {
         const rotatedZ = icon.x * sinY + icon.z * cosY;
         const rotatedY = icon.y * cosX + rotatedZ * sinX;
 
-        const scale = (rotatedZ + 200) / 300;
-        const opacity = Math.max(0.2, Math.min(1, (rotatedZ + 150) / 200));
+        const scale = (rotatedZ + CAMERA_DISTANCE) / SCALE_DIVISOR;
+        const opacity = Math.max(0.2, Math.min(1, (rotatedZ + CAMERA_DISTANCE) / SCALE_DIVISOR));
 
         ctx.save();
         ctx.translate(
@@ -313,8 +318,8 @@ export function IconCloud({ icons, images }: IconCloudProps) {
   return (
     <canvas
       ref={canvasRef}
-      width={300}
-      height={300}
+      width={500}
+      height={500}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
