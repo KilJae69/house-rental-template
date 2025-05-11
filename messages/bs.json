@@ -141,7 +141,19 @@
         "body": "Naša porodica je oduševljena—prostrano, besprijekorno i u samom srcu netaknute prirode."
       }
     }
-  }
+  },
+  "memoriesSection":{
+      "title":"Napravite svoje uspomene u našoj Cozy Cabin!",
+      "cards": {
+        "1":"Prijatelji uz vatru",
+        "2":"Kafa prije planinarenja",
+        "3":"Zimske Radosti",
+        "4":"Stariji par",
+        "5":"Uskrs u prirodi",
+        "6":"Jutarnja joga",
+        "7":"Porodični roštilj"
+      }
+    }
   },
   "BookingInquiryForm": {
     "fields": {

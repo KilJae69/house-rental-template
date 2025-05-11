@@ -1,5 +1,5 @@
 import AboutSection from "@/components/sections/AboutSection";
-// import DragCardsSection from "@/components/sections/DragCardsSection";
+import DragCardsSection from "@/components/sections/DragCardsSection";
 import HeroSection from "@/components/sections/HeroSection";
 import PlayVideoSection from "@/components/sections/PlayVideoSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
@@ -79,7 +79,7 @@ export default async function Home({
       <AboutSection/>
      <PlayVideoSection/>
      <TestimonialSection/>
-      {/* <DragCardsSection/> */}
+      <DragCardsSection/> 
     </>
   );
 }

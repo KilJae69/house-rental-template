@@ -141,6 +141,18 @@
           "body": "Our family loved the cabin—spacious, spotless, and nestled in absolute serenity."
         }
       }
+    },
+    "memoriesSection":{
+      "title":"Make your own memories at our Cozy Cabin!",
+      "cards": {
+        "1":"Friends by Firepit",
+        "2":"Coffee before hiking",
+        "3":"Snowball Fight",
+        "4":"Elderly Couple",
+        "5":"Eastern in Nature",
+        "6":"Morning Yoga",
+        "7":"Family BBQ"
+      }
     }
   },
   "BookingInquiryForm": {
