@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 
 export default function ThemeSwitcher() {
   const { theme, setTheme, themes } = useTheme();
-console.log(themes);
+
   return (
     <select
       value={theme}

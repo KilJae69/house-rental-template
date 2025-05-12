@@ -105,7 +105,7 @@ export default function Header() {
       transition={{ type: "tween", duration: 0.2 }}
       className={`fixed top-0 left-0  w-full z-[1000] `}
     >
-      <div className="fixed w-full left-1/2 -translate-x-1/2 z-[1000]">
+      <div className="fixed w-full left-1/2 -translate-x-1/2 ">
         <div
           className={`flex relative items-center max-w-7xl mx-auto justify-between p-3 transition-all duration-300 ${
             headerState === "top"

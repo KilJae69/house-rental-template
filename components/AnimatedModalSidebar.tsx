@@ -58,7 +58,7 @@ function ModalHeader() {
       >
         <Image
           src={logoSrc}
-          alt="Spark Studio Logo"
+          alt="Cozy Cabin Logo"
           className="object-contain"
           fill
         />

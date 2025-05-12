@@ -29,7 +29,7 @@ export const FloatingDock = ({ className }: { className?: string }) => {
     { code: "bs", country: t("language-option-bs"), flag: "/icons/bs.png" },
     // { code: "de", country: t("language-option-de"), flag: "/icons/de.png" },
   ];
-  console.log(languages);
+
   return (
     <>
       <FloatingDockDesktop
