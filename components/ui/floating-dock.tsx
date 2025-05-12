@@ -48,7 +48,7 @@ export const FloatingDockMobile = ({
 }: {
   items: LanguageItem[];
   className?: string;
-  path: "/" | "/about" | "/contact" | "/gallery" | "/terms" | "/privacy";
+  path: "/" |  "/contact" | "/gallery" | "/terms" | "/privacy";
 }) => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
