@@ -24,22 +24,22 @@ export function FormModal() {
   return (
     <div className="flex items-center justify-center">
       <Modal>
-        <ModalTrigger className="px-6 py-3 bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-dark)] focus:ring-[var(--color-primary-light)] inline-flex items-center group relative justify-center font-medium rounded-md cursor-pointer transition focus:outline-none focus:ring-2 focus:ring-offset-2 group/modal-btn">
-          <span className="group-hover/modal-btn:translate-x-40 text-center transition duration-500">
+        <ModalTrigger className="px-9 py-6 bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-dark)] focus:ring-[var(--color-primary-light)] inline-flex items-center group relative justify-center font-medium rounded-md cursor-pointer transition focus:outline-none focus:ring-2 focus:ring-offset-2 group/modal-btn">
+          <span className="group-hover/modal-btn:translate-x-44 text-center transition duration-300">
             {t("formModal.triggerButton")}
           </span>
-          <div className="-translate-x-40 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-500 text-white z-20">
+          <div className="-translate-x-44 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-300 text-white z-20">
             <MdAttachEmail className="size-5" />
           </div>
         </ModalTrigger>
         <ModalBody className="scroll-y-auto">
           <ModalContent>
-            <div className="bg-gradient-to-b text-center from-[var(--color-primary-dark)] via-[var(--color-primary)] px-4 lg:px-8 pt-4 lg:pt-8 to-white">
+            <div className="bg-gradient-to-b text-center from-[var(--color-primary-dark)] via-[var(--color-primary)] px-4 lg:px-8 pt-8 to-white">
 
            
             <h3 className="text-lg md:text-2xl text-white font-bold text-center ">
               <span>{t("formModal.modalTitle")}</span>{" "}
-              <span className="px-1 py-0.5 rounded-md text-[var(--color-primary-dark)] bg-gray-100  border border-gray-200">
+              <span className="px-1 py-0.5 rounded-md text-[var(--color-primary-dark)] bg-gray-100 whitespace-nowrap border border-gray-200">
                 Cozy Cabin
               </span>
               ?{" "}

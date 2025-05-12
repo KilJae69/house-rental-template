@@ -51,7 +51,7 @@ export function AnimatedBeamMultipleOutputs({
       <div className="flex size-full max-w-lg flex-row items-stretch justify-between gap-10">
         <div className="flex flex-col justify-center">
           <Circle ref={div7Ref} className="size-16 relative overflow-clip">
-          <Image src={"/images/avatars/3d-avatar.png"} fill alt="user avatar 3d"/>
+          <Image src={"/images/avatars/3d-avatar-1.png"} fill alt="user avatar 3d"/>
           </Circle>
         </div>
         <div className="flex flex-col justify-center">

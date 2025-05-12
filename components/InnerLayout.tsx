@@ -4,8 +4,9 @@ import { ReactNode } from "react";
 
 import Header from "./Header";
 import ThemeFloatingDock from "./ThemeFloatingDock";
+import Footer from "./Footer";
 
-// import Footer from "./Footer";
+
 
 type InnerLayoutProps = {
   children: ReactNode;
@@ -20,7 +21,7 @@ export default function InnerLayout({ children }: InnerLayoutProps) {
 
       <div className="relative flex flex-auto overflow-hidden bg-white ">
         <div className="relative isolate flex w-full flex-col ">
-          <main className="w-full relative flex-auto min-h-[10000px]">
+          <main className="w-full relative flex-auto ">
             {children}
             <div className="hidden xl:block  fixed right-4 top-1/2 -translate-y-1/2 z-50 ">
               <ThemeFloatingDock vertical desktop/>
@@ -31,7 +32,7 @@ export default function InnerLayout({ children }: InnerLayoutProps) {
           </main>
         </div>
       </div>
-      {/* <Footer /> */}
+     <Footer /> 
       <div id="modal-root"></div>
     </>
   );

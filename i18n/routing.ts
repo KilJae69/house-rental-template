@@ -12,7 +12,7 @@ export const routing = defineRouting({
   pathnames: {
     // Static pages
     "/": "/",
-    "/about": { en: "/about", bs: "/o-nama", de: "/uber-uns" }, // Updated "ueber-uns" to "uber-uns"
+    // "/about": { en: "/about", bs: "/o-nama", de: "/uber-uns" }, // Updated "ueber-uns" to "uber-uns"
     "/contact": { en: "/contact", bs: "/kontakt", de: "/kontakt" },
     "/gallery": {en:"/gallery",bs:"/galerija"},
     // "/pricing": { en: "/pricing", bs: "/cijene", de: "/preise" },

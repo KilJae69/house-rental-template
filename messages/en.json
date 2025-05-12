@@ -197,5 +197,25 @@
       "modalTitle": "Have questions about our",
       "paragraph": "Send us an inquiry below ✉️"
     }
+  },
+  "Footer": {
+    "Navigation": {
+      "title":"Quick Links",
+      "link-home": "home",      
+      "link-gallery": "gallery",
+      "link-contact": "contact"
+    },
+    "Contact": {
+      "title": "Contact",
+      "address": "Spark Studio, Bosnia",
+      "phone": "+387 61 250 293",
+      "email": "spark.studio.dev@gmail.com"
+    },
+    "FollowUs": {
+      "title": "Follow Us"
+    },
+    "TemplateBy": "Template by",
+    "Disclaimer": "This site is a fully functional <strong>high-performance real-estate template</strong> crafted by Spark Studio as a proof-of-concept demo. It’s provided for presentation purposes only — not an actual live property — showcasing our web-development expertise and SEO-optimized design. Interested in a bespoke site to boost your property’s online visibility?",
+    "Copyright": "© {year} Cozy Cabin. All rights reserved."
   }
 }

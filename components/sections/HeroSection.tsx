@@ -3,7 +3,7 @@ import { m,  } from 'framer-motion';
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 
-import PrimaryThemedButton from "../shared/PrimaryThemedButton";
+
 import { HERO_ASSETS } from "@/constants/assetsData";
 import { FormModal } from "../FormModal";
 import ParallaxBg from "../ParallaxBg";
@@ -19,7 +19,7 @@ export default function HeroSection() {
   const season = theme ? theme : FALLBACK;
   const title = t("HeroSection.title");
   const subtitle = t("HeroSection.subtitle");
-  const primary = t("HeroSection.ctaPrimary");
+ 
 
   const bgImage = HERO_ASSETS[season] ?? HERO_ASSETS[FALLBACK];
   console.log(bgImage);
@@ -81,9 +81,7 @@ export default function HeroSection() {
             duration: 0.8,
             delay: 1,
           }} className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
-          <PrimaryThemedButton variant="outline"  href={`/gallery`}>
-            {primary}
-          </PrimaryThemedButton>
+        
           {/* <PrimaryThemedButton
             variant="outline"
             
