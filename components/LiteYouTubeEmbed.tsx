@@ -14,7 +14,7 @@ export default function YouTubeEmbed() {
             src="https://img.youtube.com/vi/u31qwQUeGuM/maxresdefault.jpg"
             alt="Placeholder Image for placeholder video"
             fill
-            sizes="(min-width: 1040px) 876px, (min-width: 780px) 648px, (min-width: 680px) 568px, calc(94.44vw - 55px)"
+            sizes="(min-width: 1040px) 884px, (min-width: 860px) 752px, calc(92.59vw - 26px)"
             className="w-full h-full absolute inset-0 object-cover rounded-[32px]"
           />
           <div onClick={() => setLoaded(true)} className="absolute inset-0 bg-transparent z-10 rounded-[32px] cursor-pointer"/>

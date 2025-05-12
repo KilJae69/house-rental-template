@@ -31,10 +31,10 @@ const FALLBACK = "summer";
 
 export function AvatarCloud() {
   const { ref, isLoaded } = useLazyLoad();
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   // avoid hydration mismatch
 
-  const season = theme ? theme : FALLBACK;
+  const season = resolvedTheme ? resolvedTheme : FALLBACK;
   const svgAsset =
     VIDEO_SECTION_ASSETS_2[season] ?? VIDEO_SECTION_ASSETS_2[FALLBACK];
   return (

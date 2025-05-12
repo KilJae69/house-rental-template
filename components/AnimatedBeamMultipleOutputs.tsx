@@ -51,27 +51,27 @@ export function AnimatedBeamMultipleOutputs({
       <div className="flex size-full max-w-lg flex-row items-stretch justify-between gap-10">
         <div className="flex flex-col justify-center">
           <Circle ref={div7Ref} className="size-16 relative overflow-clip">
-          <Image src={"/images/avatars/3d-avatar-1.png"} fill alt="user avatar 3d"/>
+          <Image src={"/images/avatars/3d-avatar-1.png"} sizes="60px" fill alt="user avatar 3d"/>
           </Circle>
         </div>
         <div className="flex flex-col justify-center">
           <Circle ref={div6Ref} className="size-16 relative">
-            <Image src={"/images/logo/logo-neutral.png"} fill alt="neutral logo"/>
+            <Image src={"/images/logo/logo-neutral.png"} sizes="60px" fill alt="neutral logo"/>
             <Icons.openai />
           </Circle>
         </div>
         <div className="flex flex-col justify-center gap-2">
           <Circle ref={div1Ref} className="size-16 relative">
-          <Image src={"/images/logo/spring-logo.png"} fill alt="neutral logo"/>
+          <Image src={"/images/logo/spring-logo.png"} sizes="60px" fill alt="neutral logo"/>
           </Circle>
           <Circle ref={div2Ref} className="size-16 relative">
-          <Image src={"/images/logo/autumn-logo.png"} fill alt="neutral logo"/>
+          <Image src={"/images/logo/autumn-logo.png"} sizes="60px" fill alt="neutral logo"/>
           </Circle>
           <Circle ref={div3Ref} className="size-16 relative">
-          <Image src={"/images/logo/winter-logo.png"} fill alt="neutral logo"/>
+          <Image src={"/images/logo/winter-logo.png"} sizes="60px" fill alt="neutral logo"/>
           </Circle>
           <Circle ref={div4Ref} className="size-16 relative">
-          <Image src={"/images/logo/summer-logo.png"} fill alt="neutral logo"/>
+          <Image src={"/images/logo/summer-logo.png"} sizes="60px" fill alt="neutral logo"/>
           </Circle>
          
         </div>

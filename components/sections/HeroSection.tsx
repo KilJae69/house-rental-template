@@ -13,10 +13,11 @@ const FALLBACK = "summer";
 
 export default function HeroSection() {
   const t = useTranslations("HomePage");
-  const { theme } = useTheme();
+  const { resolvedTheme  } = useTheme();
+  console.log(resolvedTheme );
   // avoid hydration mismatch
 
-  const season = theme ? theme : FALLBACK;
+  const season = resolvedTheme  ? resolvedTheme  : FALLBACK;
   const title = t("HeroSection.title");
   const subtitle = t("HeroSection.subtitle");
  

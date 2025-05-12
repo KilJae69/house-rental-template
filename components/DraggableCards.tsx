@@ -15,10 +15,10 @@ const FALLBACK = "summer";
 
 export function DraggableCards() {
   const t = useTranslations("HomePage.memoriesSection")
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   // avoid hydration mismatch
 
-  const season = theme ? theme : FALLBACK;
+  const season = resolvedTheme ? resolvedTheme : FALLBACK;
    const cameraImage = CAMERA_ASSETS[season] ?? CAMERA_ASSETS[FALLBACK];
   return (
     <DraggableCardContainer className=" pt-12  relative flex min-h-[700px] w-full items-center justify-center overflow-clip">

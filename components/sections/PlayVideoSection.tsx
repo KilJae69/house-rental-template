@@ -14,11 +14,11 @@ import ClientOnly from "../ClientOnly";
 const FALLBACK = "summer";
 
 export default function PlayVideoSection() {
-  const { theme } = useTheme();
+  const { resolvedTheme  } = useTheme();
   const t = useTranslations("HomePage");
   // avoid hydration mismatch
 
-  const season = theme ? theme : FALLBACK;
+  const season = resolvedTheme  ? resolvedTheme  : FALLBACK;
   const assetImageLeft =
     VIDEO_SECTION_ASSETS_1[season] ?? VIDEO_SECTION_ASSETS_1[FALLBACK];
   const assetImageRight =

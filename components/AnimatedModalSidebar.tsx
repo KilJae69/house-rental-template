@@ -24,10 +24,10 @@ import ThemeFloatingDock from "./ThemeFloatingDock";
 function NavigationLinks() {
   const { setOpen } = useModal();
   const t = useTranslations();
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   // fallback to summer if something’s off
   const iconSrc =
-    SEASON_ICONS[theme as keyof typeof SEASON_ICONS] || SEASON_ICONS.summer;
+    SEASON_ICONS[resolvedTheme as keyof typeof SEASON_ICONS] || SEASON_ICONS.summer;
 
  
 
@@ -46,8 +46,8 @@ function NavigationLinks() {
 
 function ModalHeader() {
   const { setOpen } = useModal();
-  const { theme } = useTheme();
-  const logoSrc = LOGO_ICONS[theme as keyof typeof LOGO_ICONS] || LOGO_ICONS.summer;
+  const { resolvedTheme } = useTheme();
+  const logoSrc = LOGO_ICONS[resolvedTheme as keyof typeof LOGO_ICONS] || LOGO_ICONS.summer;
   return (
     <div className=" flex py-2 px-2 justify-between items-center bg-white ">
       <Link

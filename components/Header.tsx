@@ -57,13 +57,13 @@ export default function Header() {
   );
   const { scrollY } = useScroll();
   const t = useTranslations();
-  const { theme } = useTheme();
+  const { resolvedTheme  } = useTheme();
   // fallback to summer if something’s off
   const iconSrc =
-    SEASON_ICONS[theme as keyof typeof SEASON_ICONS] || SEASON_ICONS.summer;
+    SEASON_ICONS[resolvedTheme  as keyof typeof SEASON_ICONS] || SEASON_ICONS.summer;
 
   const logoSrc =
-    LOGO_ICONS[theme as keyof typeof LOGO_ICONS] || LOGO_ICONS.summer;
+    LOGO_ICONS[resolvedTheme  as keyof typeof LOGO_ICONS] || LOGO_ICONS.summer;
 
   const pathname = usePathname();
   const languages = [

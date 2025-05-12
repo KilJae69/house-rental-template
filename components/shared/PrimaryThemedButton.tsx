@@ -37,9 +37,9 @@ export default function PrimaryThemedButton({
     variants[variant],
     disabled && "opacity-50 cursor-not-allowed"
   );
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const iconSrc =
-    SEASON_ICONS[theme as keyof typeof SEASON_ICONS] || SEASON_ICONS.summer;
+    SEASON_ICONS[resolvedTheme as keyof typeof SEASON_ICONS] || SEASON_ICONS.summer;
 
   if (href) {
     return (
