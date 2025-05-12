@@ -5,7 +5,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { ThemeProvider }          from 'next-themes';
 
 import MotionProviders            from './MotionProviders';
-import ClientOnly from '../ClientOnly';
+
 
 export default function Providers({
   children,
@@ -26,7 +26,7 @@ export default function Providers({
           disableTransitionOnChange
           enableSystem={false}
         >
-          <ClientOnly>{children}</ClientOnly>
+        {children}
         </ThemeProvider>
       </MotionProviders>
     </NextIntlClientProvider>

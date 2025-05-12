@@ -9,12 +9,13 @@ import {
   VIDEO_SECTION_ASSETS_2,
 } from "@/constants/assetsData";
 import { useTranslations } from "next-intl";
+import ClientOnly from "../ClientOnly";
 
 const FALLBACK = "summer";
 
 export default function PlayVideoSection() {
   const { theme } = useTheme();
-  const t = useTranslations('HomePage');
+  const t = useTranslations("HomePage");
   // avoid hydration mismatch
 
   const season = theme ? theme : FALLBACK;
@@ -28,29 +29,33 @@ export default function PlayVideoSection() {
       <Container>
         <div className="w-full max-w-3xl text-center mx-auto">
           <h2 className="text-3xl lg:text-4xl font-bold text-[var(--color-primary-dark)] mb-4">
-          {t('videoSection.title')}
+            {t("videoSection.title")}
           </h2>
           <p className="text-lg text-[var(--color-text-dark)] mb-6">
-          {t('videoSection.description')}
+            {t("videoSection.description")}
           </p>
         </div>
         <YouTubeEmbed />
       </Container>
       <div className="absolute size-[50px] sm:size-[200px] lg:size-[400px] -z-10 top-1/2 left-10 opacity-10 ">
-        <Image
-          className=" relative size-full "
-          src={assetImageLeft}
-         fill
-          alt="svg bg shape"
-        />
+        <ClientOnly>
+          <Image
+            className=" relative size-full "
+            src={assetImageLeft}
+            fill
+            alt="svg bg shape"
+          />
+        </ClientOnly>
       </div>
       <div className="absolute size-[100px] sm:size-[200px] lg:size-[400px] opacity-10 -z-10 right-10 top-2 md:top-1/4">
-        <Image
-          className=" relative size-full "
-          src={assetImageRight}
-          fill
-          alt="svg bg shape"
-        />
+        <ClientOnly>
+          <Image
+            className=" relative size-full "
+            src={assetImageRight}
+            fill
+            alt="svg bg shape"
+          />
+        </ClientOnly>
       </div>
     </section>
   );

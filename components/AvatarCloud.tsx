@@ -5,6 +5,7 @@ import { VIDEO_SECTION_ASSETS_2 } from "@/constants/assetsData";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import useLazyLoad from "@/lib/hooks/useLazyLoad";
+import ClientOnly from "./ClientOnly";
 
 const images = [
   "/images/avatars/3d-avatar-1.png",
@@ -16,17 +17,13 @@ const images = [
   "/images/avatars/3d-avatar-6.png",
   "/images/avatars/3d-avatar-1.png",
   "/images/avatars/3d-avatar-8.png",
-
-  
-
 ];
-
 
 const DynamicIconCloud = dynamic(
   () => import("@/components/ui/icon-cloud").then((mod) => mod.IconCloud),
   {
     ssr: false,
-    loading: () => <Skeleton/>,
+    loading: () => <Skeleton />,
   }
 );
 
@@ -46,18 +43,16 @@ export function AvatarCloud() {
       className="relative flex size-full max-w-2xl items-center justify-center  overflow-hidden "
     >
       <div className="absolute inset-0 -z-10  opacity-20 ">
-        <Image
-          className=" relative size-full "
-          src={svgAsset}
-          fill
-          alt="svg bg shape"
-        />
+        <ClientOnly>
+          <Image
+            className=" relative size-full "
+            src={svgAsset}
+            fill
+            alt="svg bg shape"
+          />
+        </ClientOnly>
       </div>
-      {isLoaded ? (
-        <DynamicIconCloud images={images} />
-      ) : (
-        <Skeleton />
-      )}
+      {isLoaded ? <DynamicIconCloud images={images} /> : <Skeleton />}
     </div>
   );
 }
@@ -71,7 +66,6 @@ function Skeleton() {
         height={100}
         alt="Loading"
       />
-     
     </div>
   );
 }

@@ -1,7 +1,8 @@
-'use client';
+"use client";
 
-import { m, useScroll, useTransform, useSpring } from 'framer-motion';
-import Image from 'next/image';
+import { m, useScroll, useTransform, useSpring } from "framer-motion";
+import Image from "next/image";
+import ClientOnly from "./ClientOnly";
 
 export default function ParallaxBg({ image }: { image: string }) {
   const { scrollY } = useScroll();
@@ -20,13 +21,15 @@ export default function ParallaxBg({ image }: { image: string }) {
       style={{ y: ySpring, scale: scaleSpring }}
       className="absolute inset-0 -z-10"
     >
-      <Image
-        src={image}
-        fill
-        priority
-        className="object-cover mask-image-bottom"
-        alt=""
-      />
+      <ClientOnly>
+        <Image
+          src={image}
+          fill
+          priority
+          className="object-cover mask-image-bottom"
+          alt=""
+        />
+      </ClientOnly>
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/60 to-transparent" />
     </m.div>
   );

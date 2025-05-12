@@ -7,16 +7,14 @@ import { useState } from "react";
 import Image from "next/image";
 
 import navLinks from "@/constants/navLinks";
-import {  FloatingDockMobile } from "./ui/floating-dock";
+import { FloatingDockMobile } from "./ui/floating-dock";
 import AnimatedModalSidebar from "./AnimatedModalSidebar";
-
 
 import { useTheme } from "next-themes";
 
 import { LOGO_ICONS, SEASON_ICONS } from "@/constants/assetsData";
 import HeaderCustomLink from "./shared/HeaderCustomLink";
-
-
+import ClientOnly from "./ClientOnly";
 
 /*
 const FallbackComponent = () => (
@@ -64,7 +62,8 @@ export default function Header() {
   const iconSrc =
     SEASON_ICONS[theme as keyof typeof SEASON_ICONS] || SEASON_ICONS.summer;
 
-  const logoSrc = LOGO_ICONS[theme as keyof typeof LOGO_ICONS] || LOGO_ICONS.summer;
+  const logoSrc =
+    LOGO_ICONS[theme as keyof typeof LOGO_ICONS] || LOGO_ICONS.summer;
 
   const pathname = usePathname();
   const languages = [
@@ -125,21 +124,26 @@ export default function Header() {
             className="relative w-[120px] h-[40px] lg:w-[180px] lg:h-[80px]"
           >
             <Link href="/" aria-label="Home">
-              <Image
-                src={logoSrc}
-                priority
-                alt="Spark Studio Logo"
-                className="object-contain"
-                fill
-              />
+              <ClientOnly>
+                <Image
+                  src={logoSrc}
+                  priority
+                  alt="Spark Studio Logo"
+                  className="object-contain"
+                  fill
+                />
+              </ClientOnly>
             </Link>
           </div>
           <nav className="hidden lg:block">
             <ul className="flex whitespace-nowrap">
               {navLinks.map((link) => (
                 <li key={link.title}>
-                  <HeaderCustomLink href={link.href} title={t(link.title)} iconSrc={iconSrc}/>
-                  
+                  <HeaderCustomLink
+                    href={link.href}
+                    title={t(link.title)}
+                    iconSrc={iconSrc}
+                  />
                 </li>
               ))}
             </ul>
@@ -152,8 +156,7 @@ export default function Header() {
                 </Button> */}
 
             <FloatingDockMobile items={languages} path={pathname} />
-           
-            
+
             <div className="lg:hidden">
               <AnimatedModalSidebar />
             </div>
