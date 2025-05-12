@@ -12,7 +12,7 @@ import AnimatedModalSidebar from "./AnimatedModalSidebar";
 
 
 import { useTheme } from "next-themes";
-import ThemeFloatingDock from "./ThemeFloatingDock";
+
 import { LOGO_ICONS, SEASON_ICONS } from "@/constants/assetsData";
 import HeaderCustomLink from "./shared/HeaderCustomLink";
 
@@ -153,7 +153,7 @@ export default function Header() {
 
             <FloatingDockMobile items={languages} path={pathname} />
            
-            <ThemeFloatingDock/>
+            
             <div className="lg:hidden">
               <AnimatedModalSidebar />
             </div>

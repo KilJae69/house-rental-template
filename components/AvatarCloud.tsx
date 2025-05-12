@@ -7,15 +7,15 @@ import dynamic from "next/dynamic";
 import useLazyLoad from "@/lib/hooks/useLazyLoad";
 
 const images = [
-  "/images/avatars/3d-avatar.png",
   "/images/avatars/3d-avatar-1.png",
+  "/images/avatars/3d-avatar-8.png",
   "/images/avatars/3d-avatar-2.png",
   "/images/avatars/3d-avatar-3.png",
   "/images/avatars/3d-avatar-4.png",
   "/images/avatars/3d-avatar-5.png",
   "/images/avatars/3d-avatar-6.png",
-  "/images/avatars/3d-avatar.png",
   "/images/avatars/3d-avatar-1.png",
+  "/images/avatars/3d-avatar-8.png",
 
   
 

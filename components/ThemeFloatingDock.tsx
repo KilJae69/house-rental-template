@@ -24,9 +24,11 @@ type ThemeItem = {
 export default function ThemeFloatingDock({
   className,
   desktop,
+  vertical = false,
 }: {
   className?: string;
   desktop?: boolean;
+  vertical?: boolean;
 }) {
   const [mounted, setMounted] = useState(false);
   const { themes = [] } = useTheme();
@@ -48,7 +50,7 @@ export default function ThemeFloatingDock({
   return (
     <div className={cn("flex items-center", className)}>
       {desktop ? (
-        <ThemeFloatingDockDesktop items={items} />
+        <ThemeFloatingDockDesktop vertical={vertical} items={items} />
       ) : (
         <ThemeFloatingDockMobile items={items} />
       )}
@@ -58,8 +60,25 @@ export default function ThemeFloatingDock({
 
 function ThemeFloatingDockMobile({ items }: { items: ThemeItem[] }) {
   const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
   const { theme, setTheme } = useTheme();
   const [isPending, startTransition] = useTransition();
+
+   useEffect(() => {
+     if (!open) return;
+     function onClickOutside(ev: MouseEvent) {
+       if (
+         containerRef.current &&
+         !containerRef.current.contains(ev.target as Node)
+       ) {
+         setOpen(false);
+       }
+     }
+     document.addEventListener("mousedown", onClickOutside);
+     return () => {
+       document.removeEventListener("mousedown", onClickOutside);
+     };
+   }, [open]);
 
   // current + others
   const current = items.find((i) => i.code === theme) ?? items[0];
@@ -68,28 +87,28 @@ function ThemeFloatingDockMobile({ items }: { items: ThemeItem[] }) {
   const handleSelect = (code: string) => {
     startTransition(() => setTheme(code));
     setOpen(false);
-    console.log(code, "from select");
+    
   };
 
   return (
-    <div className="relative ">
+    <div className="relative " ref={containerRef}>
       <AnimatePresence>
         {open && (
           <m.div
             layoutId="theme-dock"
-            className="absolute top-full mt-2 flex flex-col gap-2  "
-            initial={{ opacity: 0, y: -10 }}
+            className="absolute bottom-full mb-2 flex flex-col-reverse gap-2  "
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+            exit={{ opacity: 0, y: 10 }}
           >
             {others.map((item, idx) => (
               <m.button
                 key={item.code}
                 onClick={() => handleSelect(item.code)}
-                initial={{ opacity: 0, y: -10 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10, transition: { delay: idx * 0.05 } }}
-                transition={{ delay: (others.length - 1 - idx) * 0.05 }}
+                exit={{ opacity: 0, y: 10, transition: { delay: idx * 0.05 } }}
+                transition={{ delay: idx * 0.05 }}
                 className="h-10 w-10 rounded-full cursor-pointer bg-gray-50 flex items-center justify-center"
               >
                 <Image
@@ -115,8 +134,8 @@ function ThemeFloatingDockMobile({ items }: { items: ThemeItem[] }) {
   );
 }
 
-function ThemeFloatingDockDesktop({ items }: { items: ThemeItem[] }) {
-  const mouseX = useMotionValue(Infinity);
+function ThemeFloatingDockDesktop({ items, vertical = false  }: { items: ThemeItem[]; vertical?: boolean; }) {
+ const mousePos = useMotionValue(Infinity);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isPending, startTransition] = useTransition();
   const { theme, setTheme } = useTheme();
@@ -127,9 +146,10 @@ function ThemeFloatingDockDesktop({ items }: { items: ThemeItem[] }) {
 
   return (
     <m.div
-      onMouseMove={(e) => mouseX.set(e.pageX)}
-      onMouseLeave={() => mouseX.set(Infinity)}
-      className="flex gap-4"
+       onMouseMove={(e) => mousePos.set(vertical ? e.clientY : e.clientX)}
+      onMouseLeave={() => mousePos.set(Infinity)}
+      className={cn("flex gap-4", vertical ? "flex-col" : "flex-row")}
+      
     >
       {items.map((item) => (
         <IconContainer
@@ -137,7 +157,8 @@ function ThemeFloatingDockDesktop({ items }: { items: ThemeItem[] }) {
           item={item}
           selected={item.code === theme}
           onSelect={() => handleSelect(item.code)}
-          mouseX={mouseX}
+          mousePos={mousePos}
+          vertical={vertical}
         />
       ))}
     </m.div>
@@ -148,19 +169,26 @@ function IconContainer({
   item,
   selected,
   onSelect,
-  mouseX,
+ mousePos,
+  vertical = false,
 }: {
   item: ThemeItem;
   selected: boolean;
   onSelect: () => void;
-  mouseX: MotionValue;
+ mousePos: MotionValue;
+  vertical?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   // distance from cursor → grows center icon
-  const distance = useTransform(mouseX, (x) => {
+  const distance = useTransform(mousePos, (pos) => {
     const r = ref.current?.getBoundingClientRect();
-    return x - ((r?.x || 0) + (r?.width || 0) / 2);
+    if (vertical) {
+      return pos - ((r?.y || 0) + (r?.height || 0) / 2);
+    } else {
+      return pos - ((r?.x || 0) + (r?.width || 0) / 2);
+    }
   });
+
   const width = useSpring(
     useTransform(distance, [-150, 0, 150], [40, 80, 40]),
     {
@@ -187,7 +215,7 @@ function IconContainer({
       onMouseLeave={() => setHovered(false)}
       onClick={onSelect}
       className={cn(
-        "flex items-center justify-center rounded-full cursor-pointer bg-gray-100",
+        "flex items-center justify-center rounded-full cursor-pointer bg-gray-200",
         selected &&
           "ring-2 ring-offset-2 ring-[var(--color-primary-dark)] bg-[var(--color-primary-light)]"
       )}
@@ -195,10 +223,27 @@ function IconContainer({
       <AnimatePresence>
         {hovered && (
           <m.div
-            initial={{ opacity: 0, y: 10, x: "-50%" }}
-            animate={{ opacity: 1, y: 0, x: "-50%" }}
-            exit={{ opacity: 0, y: 2, x: "-50%" }}
-            className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[var(--color-secondary)] text-white text-xs px-2 py-0.5 rounded"
+            initial={{ 
+              opacity: 0, 
+              y: vertical ? 0 : 10,
+              x: vertical ? 10 : "-50%"
+            }}
+            animate={{ 
+              opacity: 1, 
+              y: vertical ? 0 : 0,
+              x: vertical ? 10 : "-50%"
+            }}
+            exit={{ 
+              opacity: 0, 
+              y: vertical ? 0 : 2,
+              x: vertical ? 10 : "-50%"
+            }}
+            className={cn(
+              "absolute whitespace-nowrap bg-[var(--color-secondary)] text-white text-xs px-2 py-0.5 rounded",
+              vertical 
+                ? "left-full ml-2" 
+                : "-top-8 left-1/2 -translate-x-1/2"
+            )}
           >
             {item.label}
           </m.div>

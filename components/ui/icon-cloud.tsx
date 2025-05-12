@@ -15,20 +15,22 @@ interface Icon {
 interface IconCloudProps {
   icons?: React.ReactNode[];
   images?: string[];
+  // Added quality multiplier prop with default value of 2
+  qualityMultiplier?: number;
 }
 
 function easeOutCubic(t: number): number {
   return 1 - Math.pow(1 - t, 3);
 }
 
-const ICON_SIZE = 60;
+const ICON_SIZE = 40;
 const SPHERE_RADIUS = ICON_SIZE * 3;
 const CAMERA_DISTANCE = SPHERE_RADIUS * 2;
-const SCALE_DIVISOR   = SPHERE_RADIUS * 1.5;
+const SCALE_DIVISOR = SPHERE_RADIUS * 1.5;
 const SVG_BASE = 100;
 const svgScale = ICON_SIZE / SVG_BASE;
 
-export function IconCloud({ icons, images }: IconCloudProps) {
+export function IconCloud({ icons, images, qualityMultiplier = 2 }: IconCloudProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [iconPositions, setIconPositions] = useState<Icon[]>([]);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -49,6 +51,12 @@ export function IconCloud({ icons, images }: IconCloudProps) {
   const rotationRef = useRef(rotation);
   const iconCanvasesRef = useRef<HTMLCanvasElement[]>([]);
   const imagesLoadedRef = useRef<boolean[]>([]);
+  
+  // Get device pixel ratio for high DPI screens
+  const devicePixelRatio = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1;
+  
+  // Quality scaling factor (combine device pixel ratio with quality multiplier)
+  const qualityScale = devicePixelRatio * qualityMultiplier;
 
   // Create icon canvases once when icons/images change
   useEffect(() => {
@@ -58,12 +66,18 @@ export function IconCloud({ icons, images }: IconCloudProps) {
     imagesLoadedRef.current = new Array(items.length).fill(false);
 
     const newIconCanvases = items.map((item, index) => {
+      // Create high-resolution canvas for each icon
       const offscreen = document.createElement("canvas");
-      offscreen.width = ICON_SIZE;
-      offscreen.height = ICON_SIZE;
-      const offCtx = offscreen.getContext("2d");
+      const highResSize = ICON_SIZE * qualityScale;
+      offscreen.width = highResSize;
+      offscreen.height = highResSize;
+      const offCtx = offscreen.getContext("2d", { alpha: true });
 
       if (offCtx) {
+        // Enable image smoothing for better quality
+        offCtx.imageSmoothingEnabled = true;
+        offCtx.imageSmoothingQuality = "high";
+        
         if (images) {
           // Handle image URLs directly
           const img = new Image();
@@ -72,25 +86,26 @@ export function IconCloud({ icons, images }: IconCloudProps) {
           img.onload = () => {
             offCtx.clearRect(0, 0, offscreen.width, offscreen.height);
 
-            // Create circular clipping path
+            // Create circular clipping path at high resolution
             offCtx.beginPath();
-            offCtx.arc(ICON_SIZE/2, ICON_SIZE/2, ICON_SIZE/2, 0, Math.PI * 2);
+            offCtx.arc(highResSize/2, highResSize/2, highResSize/2, 0, Math.PI * 2);
             offCtx.closePath();
             offCtx.clip();
 
-            // Draw the image
-            offCtx.drawImage(img, 0, 0, ICON_SIZE, ICON_SIZE)
+            // Draw the image at high resolution
+            offCtx.drawImage(img, 0, 0, highResSize, highResSize);
 
             imagesLoadedRef.current[index] = true;
           };
         } else {
-          // Handle SVG icons
-          offCtx.scale(svgScale, svgScale);
+          // Handle SVG icons with high-resolution scaling
+          const scaleFactor = svgScale * qualityScale;
+          offCtx.scale(scaleFactor, scaleFactor);
           const svgString = renderToString(item as React.ReactElement);
           const img = new Image();
           img.src = "data:image/svg+xml;base64," + btoa(svgString);
           img.onload = () => {
-            offCtx.clearRect(0, 0, offscreen.width, offscreen.height);
+            offCtx.clearRect(0, 0, SVG_BASE, SVG_BASE);
             offCtx.drawImage(img, 0, 0);
             imagesLoadedRef.current[index] = true;
           };
@@ -100,7 +115,7 @@ export function IconCloud({ icons, images }: IconCloudProps) {
     });
 
     iconCanvasesRef.current = newIconCanvases;
-  }, [icons, images]);
+  }, [icons, images, qualityScale]);
 
   // Generate initial icon positions on a sphere
   useEffect(() => {
@@ -132,6 +147,40 @@ export function IconCloud({ icons, images }: IconCloudProps) {
     setIconPositions(newIcons);
   }, [icons, images]);
 
+  // Configure high DPI canvas on mount and resize
+  useEffect(() => {
+    const setupCanvas = () => {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+      
+      // Set display size
+      canvas.style.width = `500px`;
+      canvas.style.height = `500px`;
+      
+      // Set actual size in memory (scaled up for higher resolution)
+      canvas.width = 500 * qualityScale;
+      canvas.height = 500 * qualityScale;
+      
+      // Get context and scale all drawing operations
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        ctx.scale(qualityScale, qualityScale);
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+      }
+    };
+    
+    setupCanvas();
+    
+    // Optional: Handle window resize
+    const handleResize = () => {
+      setupCanvas();
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [qualityScale]);
+
   // Handle mouse events
   const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
     const rect = canvasRef.current?.getBoundingClientRect();
@@ -153,8 +202,9 @@ export function IconCloud({ icons, images }: IconCloudProps) {
       const rotatedZ = icon.x * sinY + icon.z * cosY;
       const rotatedY = icon.y * cosX + rotatedZ * sinX;
 
-      const screenX = canvasRef.current!.width / 2 + rotatedX;
-      const screenY = canvasRef.current!.height / 2 + rotatedY;
+      // Use 500 instead of canvas.width to match the CSS display size
+      const screenX = 500 / 2 + rotatedX;
+      const screenY = 500 / 2 + rotatedY;
 
       const scale = (rotatedZ + CAMERA_DISTANCE) / SCALE_DIVISOR;
       const radius = (ICON_SIZE/2) * scale;
@@ -225,10 +275,12 @@ export function IconCloud({ icons, images }: IconCloudProps) {
     if (!canvas || !ctx) return;
 
     const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Clear with proper scaled dimensions
+      ctx.clearRect(0, 0, 500, 500);
 
-      const centerX = canvas.width / 2;
-      const centerY = canvas.height / 2;
+      // Use 500 for center calculations to match CSS display size
+      const centerX = 500 / 2;
+      const centerY = 500 / 2;
       const maxDistance = Math.sqrt(centerX * centerX + centerY * centerY);
       const dx = mousePos.x - centerX;
       const dy = mousePos.y - centerY;
@@ -254,12 +306,13 @@ export function IconCloud({ icons, images }: IconCloudProps) {
         }
       } else if (!isDragging) {
         rotationRef.current = {
-          x: rotationRef.current.x + (dy / canvas.height) * speed,
-          y: rotationRef.current.y + (dx / canvas.width) * speed,
+          x: rotationRef.current.x + (dy / 500) * speed,
+          y: rotationRef.current.y + (dx / 500) * speed,
         };
       }
 
-      iconPositions.forEach((icon, index) => {
+      // Sort icons by z-index for correct layering (deeper icons should be drawn first)
+      const sortedIcons = [...iconPositions].map(icon => {
         const cosX = Math.cos(rotationRef.current.x);
         const sinX = Math.sin(rotationRef.current.x);
         const cosY = Math.cos(rotationRef.current.y);
@@ -268,25 +321,42 @@ export function IconCloud({ icons, images }: IconCloudProps) {
         const rotatedX = icon.x * cosY - icon.z * sinY;
         const rotatedZ = icon.x * sinY + icon.z * cosY;
         const rotatedY = icon.y * cosX + rotatedZ * sinX;
+        
+        return {
+          ...icon,
+          rotatedX,
+          rotatedY,
+          rotatedZ
+        };
+      }).sort((a, b) => a.rotatedZ - b.rotatedZ);
 
-        const scale = (rotatedZ + CAMERA_DISTANCE) / SCALE_DIVISOR;
-        const opacity = Math.max(0.2, Math.min(1, (rotatedZ + CAMERA_DISTANCE) / SCALE_DIVISOR));
+      sortedIcons.forEach((icon) => {
+        const scale = (icon.rotatedZ + CAMERA_DISTANCE) / SCALE_DIVISOR;
+        const opacity = Math.max(0.2, Math.min(1, (icon.rotatedZ + CAMERA_DISTANCE) / SCALE_DIVISOR));
 
         ctx.save();
         ctx.translate(
-          canvas.width / 2 + rotatedX,
-          canvas.height / 2 + rotatedY
+          centerX + icon.rotatedX,
+          centerY + icon.rotatedY
         );
         ctx.scale(scale, scale);
         ctx.globalAlpha = opacity;
 
         if (icons || images) {
           // Only try to render icons/images if they exist
+          const index = icon.id;
           if (
             iconCanvasesRef.current[index] &&
             imagesLoadedRef.current[index]
           ) {
-            ctx.drawImage(iconCanvasesRef.current[index], -ICON_SIZE/2, -ICON_SIZE/2, ICON_SIZE, ICON_SIZE);
+            // Draw high-res icon with proper centering and scaling
+            ctx.drawImage(
+              iconCanvasesRef.current[index], 
+              -ICON_SIZE/2, 
+              -ICON_SIZE/2, 
+              ICON_SIZE, 
+              ICON_SIZE
+            );
           }
         } else {
           // Show numbered circles if no icons/images are provided
@@ -318,8 +388,7 @@ export function IconCloud({ icons, images }: IconCloudProps) {
   return (
     <canvas
       ref={canvasRef}
-      width={500}
-      height={500}
+      style={{ width: '500px', height: '500px' }}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}

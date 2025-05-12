@@ -5,7 +5,7 @@ export const testimonialData = [
       flagIcon:"/icons/flags/united-states-of-america.png",
       country: "testimonials.jack.country",
       body: "testimonials.jack.body",
-      img: "/images/avatars/3d-avatar.png",
+      img: "/images/avatars/3d-avatar-1.png",
     },
     {
       name: "Jill",
@@ -13,7 +13,7 @@ export const testimonialData = [
       flagIcon:"/icons/flags/united-kingdom.png",
       country: "testimonials.jill.country",
       body: "testimonials.jill.body",
-      img: "/images/avatars/3d-avatar-1.png",
+      img: "/images/avatars/3d-avatar-8.png",
     },
     {
       name: "Mahmoud",
