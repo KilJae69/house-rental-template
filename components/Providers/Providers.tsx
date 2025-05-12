@@ -15,6 +15,7 @@ export default function Providers({
   locale: string;
   messages: Record<string, unknown>;
 }) {
+  console.log();
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       <ThemeProvider
