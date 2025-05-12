@@ -1,11 +1,10 @@
 // components/Providers.tsx
-'use client';
-import { ReactNode } from 'react';
-import { NextIntlClientProvider } from 'next-intl';
-import { ThemeProvider }          from 'next-themes';
+"use client";
+import { ReactNode } from "react";
+import { NextIntlClientProvider } from "next-intl";
+import { ThemeProvider } from "next-themes";
 
-import MotionProviders            from './MotionProviders';
-
+import MotionProviders from "./MotionProviders";
 
 export default function Providers({
   children,
@@ -18,17 +17,15 @@ export default function Providers({
 }) {
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <MotionProviders>
-        <ThemeProvider
-          attribute="data-theme"
-          defaultTheme="summer"
-          themes={['spring','summer','autumn','winter']}
-          disableTransitionOnChange
-          enableSystem={false}
-        >
-        {children}
-        </ThemeProvider>
-      </MotionProviders>
+      <ThemeProvider
+        attribute="data-theme"
+        defaultTheme="summer"
+        themes={["spring", "summer", "autumn", "winter"]}
+        disableTransitionOnChange
+        enableSystem={false}
+      >
+        <MotionProviders>{children}</MotionProviders>
+      </ThemeProvider>
     </NextIntlClientProvider>
   );
 }
