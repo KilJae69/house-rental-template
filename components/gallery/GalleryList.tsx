@@ -11,9 +11,11 @@ import { cn } from "@/lib/utils";
 function GalleryCard({
   setSelected,
   item,
+   priority = false, 
 }: {
   item: GalleryItem;
   setSelected: (item: GalleryItem | null) => void;
+  priority?: boolean;
 }) {
   return (
     <div className="inline-block w-full mb-4">
@@ -35,6 +37,7 @@ function GalleryCard({
           alt={item.title}
           width={800}   // Example default width
           height={600}  // Example default height
+          priority={priority}
           className="w-full h-auto object-cover rounded-lg cursor-pointer bg-gray-100 shadow-xl"
           placeholder="blur"
           blurDataURL="data:image/svg+xml;base64,[your-small-base64-blur-hash]"
@@ -94,7 +97,7 @@ export default function GalleryList({
           {/* Gallery Grid */}
           <div className="columns-1  md:columns-2 lg:columns-3 gap-4">
             <AnimatePresence>
-              {filteredData.map((item) => (
+              {filteredData.map((item,idx) => (
                 <motion.div
                   key={item.id}
                   layout
@@ -103,7 +106,7 @@ export default function GalleryList({
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <GalleryCard item={item} setSelected={setSelected} />
+                  <GalleryCard item={item}  priority={idx < 2}  setSelected={setSelected} />
                 </motion.div>
               ))}
             </AnimatePresence>
