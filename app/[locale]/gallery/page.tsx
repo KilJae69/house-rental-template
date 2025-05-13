@@ -4,6 +4,19 @@ import { galleryData } from "@/constants/galleryData";
 import Image from "next/image";
 import { Suspense } from "react";
 
+function Fallback(){
+  return (
+    <div className="flex items-center relative justify-center min-h-screen">
+         <Image
+           src="/bouncing-circles.svg"
+           width={300}
+           height={300}
+           alt="Loading"
+         />
+       </div>
+  )
+}
+
 export default function GalleryPage() {
   return (
      <section className=" py-20 w-full">
@@ -18,15 +31,3 @@ export default function GalleryPage() {
   
 }
 
-function Fallback(){
-  return (
-    <div className="flex items-center relative justify-center min-h-full">
-         <Image
-           src="/bouncing-circles.svg"
-           width={100}
-           height={100}
-           alt="Loading"
-         />
-       </div>
-  )
-}
