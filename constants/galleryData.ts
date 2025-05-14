@@ -127,8 +127,8 @@ export const galleryData = [
   }
 
   export const galleryCategories = [
-    { id: "all", name: "All Images" },
-    { id: "indoors", name: "Indoors" },
-    { id: "outdoors", name: "Outdoors" },
+    { id: "all", name: "tabs.all" },
+    { id: "indoors", name: "tabs.indoors" },
+    { id: "outdoors", name: "tabs.outdoors" },
     
   ];

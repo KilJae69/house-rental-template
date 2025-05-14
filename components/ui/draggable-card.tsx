@@ -14,9 +14,13 @@ import {
 export const DraggableCardBody = ({
   className,
   children,
+  isActive = false,
+  onActivate,
 }: {
   className?: string;
   children?: React.ReactNode;
+   isActive?: boolean;
+  onActivate?: () => void;
 }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -111,9 +115,12 @@ export const DraggableCardBody = ({
       dragConstraints={constraints}
       onDragStart={() => {
         document.body.style.cursor = "grabbing";
+       onActivate?.();  // Bring to front when dragging starts
       }}
       onDragEnd={(event, info) => {
         document.body.style.cursor = "default";
+        // Keep the z-index high for a smooth transition
+      
 
         controls.start({
           rotateX: 0,
@@ -157,6 +164,7 @@ export const DraggableCardBody = ({
         rotateY,
         opacity,
         willChange: "transform",
+       zIndex: isActive ? 999 : 1,
       }}
       animate={controls}
       whileHover={{ scale: 1.02 }}

@@ -190,7 +190,7 @@ function IconContainer({
   });
 
   const width = useSpring(
-    useTransform(distance, [-150, 0, 150], [40, 80, 40]),
+    useTransform(distance, [-80, 0, 80], [40, 50, 40]),
     {
       mass: 0.1,
       stiffness: 150,
@@ -198,7 +198,7 @@ function IconContainer({
     }
   );
   const height = useSpring(
-    useTransform(distance, [-150, 0, 150], [40, 80, 40]),
+    useTransform(distance, [-80, 0, 80], [40, 50,40]),
     {
       mass: 0.1,
       stiffness: 150,
@@ -252,8 +252,8 @@ function IconContainer({
 
       <Image
         src={item.icon}
-        width={32}
-        height={32}
+        width={28}
+        height={28}
         alt={item.label}
         className="rounded-full"
       />

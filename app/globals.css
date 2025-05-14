@@ -226,3 +226,22 @@
   top: 14px;
   left: 10px;
 }
+
+/* fade out the image softly toward all edges */
+.mask-fade {
+  /* for Firefox */
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(0,0,0,1) 50%,
+    rgba(0,0,0,0) 100%
+  );
+  mask-mode: alpha;
+
+  /* for WebKit (Safari/Chrome) */
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    rgba(0,0,0,1) 50%,
+    rgba(0,0,0,0) 100%
+  );
+  -webkit-mask-mode: alpha;
+}

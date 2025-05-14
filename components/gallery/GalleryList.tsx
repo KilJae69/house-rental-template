@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 
 function GalleryCard({
@@ -71,23 +72,24 @@ export default function GalleryList({
       ? galleryData
       : galleryData.filter(item => item.categories.includes(selectedCategory));
  
+      const t = useTranslations("GalleryPage")
     const handleCategoryChange = (categoryId: string) => {
       setSelectedCategory(categoryId);
       router.push(`?category=${categoryId}`, { scroll: false });
     };
     return (
-        <div className="p-4">
-          <h2 className="text-center font-bold text-4xl mb-8">Your images</h2>
+        <div className="pt-8 lg:pt-16">
+          <h2 className="text-center font-bold text-4xl mb-8 ">{t("title")}</h2>
           
           {/* Category Filter - Desktop */}
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
+          <div className="flex flex-wrap justify-center gap-2 mb-8 lg:mb-16">
             {galleryCategories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => handleCategoryChange(category.id)}
                 className={cn(`px-4 py-2 rounded-md font-medium bg-[var(--color-primary-light)]/50 text-[var(--color-primary-dark)] hover:text-white hover:bg-[var(--color-primary-dark)] duration-200 cursor-pointer transition-colors ${selectedCategory === category.id && "bg-[var(--color-primary-dark)] text-white"}`)}
               >
-                {category.name}
+                {t(category.name)}
               </button>
             ))}
           </div>

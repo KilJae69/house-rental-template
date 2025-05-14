@@ -20,7 +20,7 @@ export default function GalleryModal({
      onClick={() => setSelected(null)}
      className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/70 backdrop-blur-sm cursor-pointer overflow-y-scroll"
    >
-    <button  onClick={() => setSelected(null)} className="absolute z-[3000] text-[var(--color-primary-light)] lg:right-10 lg:top-10  right-2 top-2">
+    <button  onClick={() => setSelected(null)} className="absolute z-[3000] cursor-pointer text-[var(--color-primary-light)] lg:right-10 lg:top-10  right-2 top-2">
       <FaXmark className="size-7" />
     </button>
 

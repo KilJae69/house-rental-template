@@ -14,7 +14,7 @@ const FALLBACK = "summer";
 export default function HeroSection() {
   const t = useTranslations("HomePage");
   const { resolvedTheme  } = useTheme();
-  console.log(resolvedTheme );
+
   // avoid hydration mismatch
 
   const season = resolvedTheme  ? resolvedTheme  : FALLBACK;

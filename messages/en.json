@@ -1,24 +1,16 @@
 {
   "Metadata": {
-    "BlogNotFoundTitle": "Blog Post Not Found",
-    "BlogNotFoundDescription": "The blog post you are looking for does not exist.",
-    "ProjectNotFoundTitle": "Case Study Not Found",
-    "ProjectNotFoundDescription": "The case study you are looking for does not exist.",
-    "ogCTA1": "Get started",
-    "ogCTA2": "Learn more",
-    "ogPillBlog": "Blog",
-    "ogPillProject": "Project",
-    "titleHome": "TalentLink BiH | Pilot Program to Solve Bosnia’s Labor Shortage",
-    "descriptionHome": "Join TalentLink BiH pilot program to prototype a fully compliant foreign-staffing platform for Bosnian employers—shape the roadmap, give feedback, and secure early access.",
-    "ogDescriptionHome": "Participate in TalentLink BiH pilot program and help prototype a legal foreign-staffing solution addressing Bosnia’s critical labor shortage.",
+    "titleHome": "Cozy Cabin | Year-Round Seasonal Retreat in Bosnia",
+    "descriptionHome": "Experience Bosnian wilderness in every season at our Cozy Cabin—spring blooms, summer adventures, autumn foliage and winter snows for an unforgettable getaway.",
+    "ogDescriptionHome": "Discover our four-season Cozy Cabin nestled in Una National Park: book your spring, summer, autumn or winter escape today.",
 
-    "titleAbout": "TalentLink BiH | Addressing the Labor Shortage in BiH",
-    "descriptionAbout": "Learn about our pilot program co-creating a legal foreign-staffing solution for Bosnian employers. Join us to shape a compliance-first workforce platform.",
-    "ogDescriptionAbout": "Explore our pilot program for legal foreign-staffing in BiH and help co-create an effective workforce solution.",
+    "titleGallery": "Gallery | Cozy Cabin Seasonal Retreat",
+    "descriptionGallery": "Browse stunning photos of our cabin through spring, summer, autumn and winter—see lush forests, blooming flowers, fiery leaves and snowy landscapes.",
+    "ogDescriptionGallery": "Explore our gallery showcasing the Cozy Cabin in all four seasons: from spring blossoms to winter wonderland.",
 
-    "titleContact": "TalentLink BiH | Get in Touch with Our Pilot Team",
-    "descriptionContact": "Reach out to the TalentLink BiH pilot team to learn how you can join our foreign-staffing prototype, share feedback, or become a founding partner. Let’s work together to solve Bosnia’s labor shortage.",
-    "ogDescriptionContact": "Contact TalentLink BiH pilot team to sign up, ask questions, or explore partnership opportunities in building a compliant foreign-staffing solution for BiH."
+    "titleContact": "Contact | Book Your Stay at the Cozy Cabin",
+    "descriptionContact": "Have questions or want to check availability? Reach out to our host to plan your spring, summer, autumn or winter retreat at the Cozy Cabin.",
+    "ogDescriptionContact": "Contact us to inquire about availability and details for your seasonal getaway at the Cozy Cabin in Bosnia."
   },
   "NotFound": {
     "title": "404",
@@ -61,7 +53,7 @@
     },
     "aboutSection": {
       "title": "About Our Retreat",
-      "body": "Nestled in the heart of Una National Park, our hand-crafted cabin welcomes you through all four seasons. In <spring>spring</spring>, wake up to blooming wildflowers and the gentle song of birds; <summer>summer</summer> brings warm days spent kayaking the river and lounging on the deck; <autumn>autumn</autumn> paints the forest in fiery reds and golds perfect for cozy hikes; and <winter>winter</winter> transforms the landscape into a snowy wonderland ideal for skiing and fireside stories. With comfort and style year-round, we offer personalized excursions—canoeing, mountain biking, stargazing dinners—and authentic Bosnian hospitality to make every stay unforgettable.",
+      "body": "Nestled in the heart of Una National Park, our hand-crafted cabin welcomes you through all four seasons. In spring, wake up to blooming wildflowers and the gentle song of birds; summer brings warm days spent kayaking the river and lounging on the deck; autumn paints the forest in fiery reds and golds perfect for cozy hikes; and winter transforms the landscape into a snowy wonderland ideal for skiing and fireside stories. With comfort and style year-round, we offer personalized excursions—canoeing, mountain biking, stargazing dinners—and authentic Bosnian hospitality to make every stay unforgettable.",
       "learnMore": "Learn More"
     },
     "photosSection": {
@@ -142,18 +134,32 @@
         }
       }
     },
-    "memoriesSection":{
-      "title":"Make your own memories at our Cozy Cabin!",
+    "memoriesSection": {
+      "title": "Make your own memories at our Cozy Cabin!",
       "cards": {
-        "1":"Friends by Firepit",
-        "2":"Coffee before hiking",
-        "3":"Snowball Fight",
-        "4":"Elderly Couple",
-        "5":"Eastern in Nature",
-        "6":"Morning Yoga",
-        "7":"Family BBQ"
+        "1": "Friends by Firepit",
+        "2": "Coffee before hiking",
+        "3": "Snowball Fight",
+        "4": "Elderly Couple",
+        "5": "Eastern in Nature",
+        "6": "Morning Yoga",
+        "7": "Family BBQ"
       }
     }
+  },
+  "GalleryPage": {
+    "pageTitle": "Gallery",
+    "title": "Explore Our Images",
+    "tabs": {
+      "all": "All Images",
+      "indoors": "Indoors",
+      "outdoors": "Outdoors"
+    }
+  },
+  "ContactPage": {
+    "pageTitle":"Contact",
+    "title":"Have questions about our",
+    "paragraph":"Send us an inquiry below ✉️"
   },
   "BookingInquiryForm": {
     "fields": {
@@ -200,8 +206,8 @@
   },
   "Footer": {
     "Navigation": {
-      "title":"Quick Links",
-      "link-home": "home",      
+      "title": "Quick Links",
+      "link-home": "home",
       "link-gallery": "gallery",
       "link-contact": "contact"
     },
@@ -215,7 +221,7 @@
       "title": "Follow Us"
     },
     "TemplateBy": "Template by",
-    "Disclaimer": "This site is a fully functional <strong>high-performance real-estate template</strong> crafted by Spark Studio as a proof-of-concept demo. It’s provided for presentation purposes only — not an actual live property — showcasing our web-development expertise and SEO-optimized design. Interested in a bespoke site to boost your property’s online visibility?",
+    "Disclaimer": "This site is a fully functional <strong>high-performance real-estate template</strong> crafted by Spark Studio as a proof-of-concept demo. It’s provided for presentation purposes only — not an actual live property — showcasing our web-development expertise and SEO-optimized design. ",
     "Copyright": "© {year} Cozy Cabin. All rights reserved."
   }
 }

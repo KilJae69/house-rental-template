@@ -57,7 +57,7 @@ export function AnimatedBeamMultipleOutputs({
         <div className="flex flex-col justify-center">
           <Circle ref={div6Ref} className="size-16 relative">
             <Image src={"/images/logo/logo-neutral.png"} sizes="60px" fill alt="neutral logo"/>
-            <Icons.openai />
+            
           </Circle>
         </div>
         <div className="flex flex-col justify-center gap-2">
@@ -124,6 +124,7 @@ export function AnimatedBeamMultipleOutputs({
   );
 }
 
+/*
 const Icons = {
   notion: () => (
     <svg
@@ -519,3 +520,4 @@ const Icons = {
     </svg>
   ),
 };
+*/

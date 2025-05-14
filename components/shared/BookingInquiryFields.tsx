@@ -1,10 +1,9 @@
+// components/BookingInquiryFields.tsx
 "use client";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-
-
-import { Button } from "@/components/ui/button";
+import { formSchema, FormValues } from "@/lib/types";
 import {
   Form,
   FormControl,
@@ -15,25 +14,16 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { formSchema, FormValues } from "@/lib/types";
+import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import toast from "react-hot-toast";
-import { useModal } from "./ui/form-animated-modal";
 
-// 1) Schema stays the same
+type Props = {
+  onSuccess?: () => void;
+};
 
-
-// 2) Stubbed submit handler
-async function handleSubmitInquiry(data: FormValues) {
-  console.log("Inquiry data:", data);
-  // simulate API
-  await new Promise((r) => setTimeout(r, 1000));
-}
-
-export default function BookingInquiryForm() {
-    const t = useTranslations("BookingInquiryForm")
-    const { setOpen } = useModal();
-
+export default function BookingInquiryFields({ onSuccess }: Props) {
+      const t = useTranslations("BookingInquiryForm")
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema(t)),
     defaultValues: {
@@ -44,19 +34,21 @@ export default function BookingInquiryForm() {
       message: "",
     },
   });
+
   const {
     handleSubmit,
     reset,
     formState: { isSubmitting },
   } = form;
 
-  // 4) onSubmit uses RHF’s submit flow
-  const onSubmit = async (data: FormValues) => {
-    await handleSubmitInquiry(data);
+  async function onSubmit(data: FormValues) {
+    // ❗ your actual API call here
+    await new Promise((r) => setTimeout(r, 1000));
+    console.log(data);
     reset();
-    setOpen(false)
-    toast.success(t("successMessage"))
-  };
+     toast.success(t("successMessage"))
+    onSuccess?.();
+  }
 
   return (
     <Form {...form}>
@@ -130,6 +122,7 @@ export default function BookingInquiryForm() {
                 <FormLabel>{t("fields.email.label")}</FormLabel>
                 <FormControl>
                   <Input
+                  className="border-[var(--color-primary-dark)]"
                     type="email"
                     placeholder={t("fields.email.placeholder")}
                     {...field}
@@ -152,6 +145,7 @@ export default function BookingInquiryForm() {
               <FormLabel>{t("fields.message.label")}</FormLabel>
               <FormControl>
                 <Textarea
+                className="min-h-[170px]"
                   placeholder={t("fields.message.placeholder")}
                   {...field}
                   disabled={isSubmitting}

@@ -38,3 +38,18 @@ export const SEASON_ICONS: Record<string, string> = {
     autumn: "/images/camera/autumn-camera.png",
     winter: "/images/camera/winter-camera.png",
   };
+
+   export const ABOUT_ASSETS: Record<string, string> = {
+    spring: "/images/cabin-assets-about/about-right-spring.png",
+    summer: "/images/cabin-assets-about/about-right-summer.png",
+    autumn: "/images/cabin-assets-about/about-right-autumn.png",
+    winter: "/images/cabin-assets-about/about-right-winter.png",
+  };
+
+
+   export const animatedImages = [
+    "/images/fall-hero.png",
+    "/images/summer-hero.png",
+    "/images/winter-hero.png",
+    "/images/spring-hero.png",
+  ];

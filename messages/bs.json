@@ -1,24 +1,16 @@
 {
   "Metadata": {
-    "BlogNotFoundTitle": "Objava na blogu nije pronađena",
-    "BlogNotFoundDescription": "Blog post koji tražite ne postoji.",
-    "ProjectNotFoundTitle": "Studija slučaja nije pronađena",
-    "ProjectNotFoundDescription": "Studija slučaja koju tražite ne postoji.",
-    "ogCTA1": "Započni",
-    "ogCTA2": "Saznaj više",
-    "ogPillBlog": "Blog",
-    "ogPillProject": "Projekt",
-    "titleHome": "TalentLink BiH | Pilot Program za Rješavanje Nedostatka Radne Snage u BiH",
-    "descriptionHome": "Pridružite se pilot-programu TalentLink BiH i su-kreirajte potpuno usklađenu platformu za zapošljavanje stranih radnika u BiH—oblikujte razvojni put, dajte povratne informacije i osigurajte rani pristup.",
-    "ogDescriptionHome": "Sudjelujte u pilot-programu TalentLink BiH i pomozite prototipirati pravno usklađeno rješenje za kritični nedostatak radne snage u BiH.",
+    "titleHome": "Ugodna Koliba | Četiri Sezone u Bosni",
+    "descriptionHome": "Doživite bosansku divljinu u svako godišnje doba u našoj Ugodnoj Kolibi—proljetni cvjetovi, ljetne avanture, jesenski tonovi i zimska čarolija za nezaboravan odmor.",
+    "ogDescriptionHome": "Otkrijte našu četvorosezonsku Ugodnu Kolibu u Nacionalnom parku Una: rezervirajte proljetni, ljetni, jesenski ili zimski odmor već danas.",
 
-    "titleAbout": "TalentLink BiH | Rješavanje Nedostatka Radne Snage u BiH",
-    "descriptionAbout": "Saznajte više o našem pilot programu za su-kreiranje legalnog modela zapošljavanja stranih radnika u BiH. Pridružite nam se i oblikujte budućnost radne snage.",
-    "ogDescriptionAbout": "Istražite naš pilot program za legalno zapošljavanje stranih radnika u BiH i sudjelujte u su-kreiranju učinkovitog rješenja.",
+    "titleGallery": "Galerija | Ugodna Koliba u Četiri Sezone",
+    "descriptionGallery": "Pogledajte zapanjujuće fotografije naše kolibe kroz proljeće, ljeto, jesen i zimu—od bujnih šuma i cvjetnih livada do vatrenih krošnji i snježnih krajolika.",
+    "ogDescriptionGallery": "Istražite galeriju koja prikazuje Ugodnu Kolibu u svim sezonama: od proljetnog cvijeća do zimske bajke.",
 
-    "titleContact": "TalentLink BiH | Kontaktirajte Naš Pilot Tim",
-    "descriptionContact": "Obratite se TalentLink BiH pilot timu kako biste saznali kako se možete pridružiti našem prototipu zapošljavanja stranih radnika, podijeliti povratne informacije ili postati osnivački partner. Zajedno ćemo riješiti nedostatak radne snage u BiH.",
-    "ogDescriptionContact": "Kontaktirajte TalentLink BiH tim za prijavu, pitanja ili partnerstvo u izradi usklađenog rješenja za zapošljavanje stranih radnika u BiH."
+    "titleContact": "Kontakt | Rezervirajte Boravak u Ugodnoj Kolibi",
+    "descriptionContact": "Imate pitanja ili želite provjeriti dostupnost? Kontaktirajte domaćina i isplanirajte svoj proljetni, ljetni, jesenski ili zimski odmor u Ugodnoj Kolibi.",
+    "ogDescriptionContact": "Kontaktirajte nas za upit o dostupnosti i detaljima vašeg sezonskog odmora u Ugodnoj Kolibi u Bosni."
   },
   "NotFound": {
     "title": "404",
@@ -61,7 +53,7 @@
     },
     "aboutSection": {
       "title": "O našem odmorištu",
-      "body": "Skrivena u srcu Nacionalnog parka Una, naša ručno izrađena koliba otvorena je tijekom sve četiri sezone. U <spring>proljeće</spring> vas bude cvjetni mirisi i ptičji žamor; <summer>ljeto</summer> mami toplim danima uz vožnju kajakom rijekom i opuštanje na terasi; <autumn>jesen</autumn> prekriva šume vatrenim nijansama crvene i zlatne, savršenima za ugodne šetnje; a <winter>zima</winter> pretvara okolinu u snježnu bajku idealnu za skijanje i priče uz topli kamin. S udobnošću i stilom tijekom cijele godine, nudimo organizirane izlete—vožnja čamcem, planinski biciklizam, večere pod zvijezdama—uz autentičnu bosansku gostoljubivost koja svaki boravak čini nezaboravnim.",
+      "body": "Skrivena u srcu Nacionalnog parka Una, naša ručno izrađena koliba otvorena je tijekom sve četiri sezone. U proljeće vas bude cvjetni mirisi i ptičji žamor; ljeto mami toplim danima uz vožnju kajakom rijekom i opuštanje na terasi; jesen prekriva šume vatrenim nijansama crvene i zlatne, savršenima za ugodne šetnje; a zima pretvara okolinu u snježnu bajku idealnu za skijanje i priče uz topli kamin. S udobnošću i stilom tijekom cijele godine, nudimo organizirane izlete—vožnja čamcem, planinski biciklizam, večere pod zvijezdama—uz autentičnu bosansku gostoljubivost koja svaki boravak čini nezaboravnim.",
       "learnMore": "Saznaj Više"
     },
     "photosSection": {
@@ -105,55 +97,69 @@
       }
     },
     "videoSection": {
-    "title": "Pogledajte Video",
-    "description": "Zavirite u svaki kutak naše udobne kolibe kroz ovu impresivnu video-turu—pogledajte sunčani dnevni boravak, potpuno opremljenu kuhinju i panoramski pogled koji vas okružuje. Pritisnite play i dopustite nam da vas povedemo srcem Nacionalnog parka Una iz udobnosti vašeg ekrana."
-  },
-  "testimonialSection": {
-    "title": "Iskustva Gostiju",
-    "description": "<strong>Pridružite se stotinama zadovoljnih posjetilaca iz cijelog svijeta</strong>—bilo da želite uživati u proljetnim cvjetovima ili zimskoj idili prekrivenoj snijegom—naša Cozy Cabin pruža toplu gostoljubivost, zadivljujuće poglede i jedinstvena lokalna iskustva u srcu Nacionalnog parka Una.",
-    "testimonials": {
-      "jack": {
-        "country": "SAD",
-        "body": "Nisam očekivao toliku toplinu i gostoprimstvo—ova koliba zaista miriše na dom."
-      },
-      "jill": {
-        "country": "VB",
-        "body": "Potpuno čarobno utočište! Svaki detalj je bio besprijekoran, a pogled oduzima dah."
-      },
-      "mahmoud": {
-        "country": "Saudijska Arabija",
-        "body": "Prekrasno bijeg u prirodu. Domaćini su se potrudili da nam boravak bude što ugodniji."
-      },
-      "diego": {
-        "country": "Španija",
-        "body": "Od proljetnih cvjetova do zimskog snijega—svaka sezona je ovdje zadivljujuća. Topla preporuka!"
-      },
-      "mehmed": {
-        "country": "Turska",
-        "body": "Ugodno, rustikalno i savršeno opremljeno—sigurno se vraćamo svake godine."
-      },
-      "nour": {
-        "country": "UAE",
-        "body": "Mirno, slikovito i puno lokalnog šarma. Doživljaj koji ću još dugo pamtiti."
-      },
-      "francesca": {
-        "country": "Italija",
-        "body": "Naša porodica je oduševljena—prostrano, besprijekorno i u samom srcu netaknute prirode."
+      "title": "Pogledajte Video",
+      "description": "Zavirite u svaki kutak naše udobne kolibe kroz ovu impresivnu video-turu—pogledajte sunčani dnevni boravak, potpuno opremljenu kuhinju i panoramski pogled koji vas okružuje. Pritisnite play i dopustite nam da vas povedemo srcem Nacionalnog parka Una iz udobnosti vašeg ekrana."
+    },
+    "testimonialSection": {
+      "title": "Iskustva Gostiju",
+      "description": "<strong>Pridružite se stotinama zadovoljnih posjetilaca iz cijelog svijeta</strong>—bilo da želite uživati u proljetnim cvjetovima ili zimskoj idili prekrivenoj snijegom—naša Cozy Cabin pruža toplu gostoljubivost, zadivljujuće poglede i jedinstvena lokalna iskustva u srcu Nacionalnog parka Una.",
+      "testimonials": {
+        "jack": {
+          "country": "SAD",
+          "body": "Nisam očekivao toliku toplinu i gostoprimstvo—ova koliba zaista miriše na dom."
+        },
+        "jill": {
+          "country": "VB",
+          "body": "Potpuno čarobno utočište! Svaki detalj je bio besprijekoran, a pogled oduzima dah."
+        },
+        "mahmoud": {
+          "country": "Saudijska Arabija",
+          "body": "Prekrasno bijeg u prirodu. Domaćini su se potrudili da nam boravak bude što ugodniji."
+        },
+        "diego": {
+          "country": "Španija",
+          "body": "Od proljetnih cvjetova do zimskog snijega—svaka sezona je ovdje zadivljujuća. Topla preporuka!"
+        },
+        "mehmed": {
+          "country": "Turska",
+          "body": "Ugodno, rustikalno i savršeno opremljeno—sigurno se vraćamo svake godine."
+        },
+        "nour": {
+          "country": "UAE",
+          "body": "Mirno, slikovito i puno lokalnog šarma. Doživljaj koji ću još dugo pamtiti."
+        },
+        "francesca": {
+          "country": "Italija",
+          "body": "Naša porodica je oduševljena—prostrano, besprijekorno i u samom srcu netaknute prirode."
+        }
       }
-    }
-  },
-  "memoriesSection":{
-      "title":"Napravite svoje uspomene u našoj Cozy Cabin!",
+    },
+    "memoriesSection": {
+      "title": "Napravite svoje uspomene u našoj Cozy Cabin!",
       "cards": {
-        "1":"Prijatelji uz vatru",
-        "2":"Kafa prije planinarenja",
-        "3":"Zimske Radosti",
-        "4":"Stariji par",
-        "5":"Uskrs u prirodi",
-        "6":"Jutarnja joga",
-        "7":"Porodični roštilj"
+        "1": "Prijatelji uz vatru",
+        "2": "Kafa prije planinarenja",
+        "3": "Zimske Radosti",
+        "4": "Stariji par",
+        "5": "Uskrs u prirodi",
+        "6": "Jutarnja joga",
+        "7": "Porodični roštilj"
       }
     }
+  },
+  "GalleryPage": {
+    "pageTitle": "Galerija",
+    "title": "Pregledajte naše fotografije",
+    "tabs": {
+      "all": "Sve Slike",
+      "indoors": "Unutrašnjost",
+      "outdoors": "Eksterijer"
+    }
+  },
+  "ContactPage": {
+    "pageTitle": "Kontakt",
+    "title":"Imate pitanja u vezi naše",
+    "paragraph":"Pošaljite nam upit ispod  ✉️"
   },
   "BookingInquiryForm": {
     "fields": {
@@ -200,7 +206,7 @@
   },
   "Footer": {
     "Navigation": {
-      "title":"Brzi Linkovi",
+      "title": "Brzi Linkovi",
       "link-home": "početna",
       "link-gallery": "galerija",
       "link-contact": "kontakt"
@@ -215,7 +221,7 @@
       "title": "Pratite nas"
     },
     "TemplateBy": "Demonstracija od",
-    "Disclaimer": "Ova web-stranica je potpuno funkcionalna i <strong>visoko optimizirana web-stranica za nekretnine</strong> koju je Spark Studio izradio kao demonstraciju. Namijenjena je isključivo u promotivne svrhe — ne prikazuje stvarnu nekretninu — te pokazuje naše vještine u web-razvoju i SEO-optimiziranom dizajnu. Želite li jedinstvenu, prilagođenu stranicu koja će istaknuti vašu nekretninu i povećati njenu online vidljivost?",
+    "Disclaimer": "Ova web-stranica je potpuno funkcionalna i <strong>visoko optimizirana web-stranica za nekretnine</strong> koju je Spark Studio izradio kao demonstraciju. Namijenjena je isključivo u promotivne svrhe — ne prikazuje stvarnu nekretninu — te pokazuje naše vještine u web-razvoju i SEO-optimiziranom dizajnu. ",
     "Copyright": "© {year} Cozy Cabin. Sva prava pridržana."
   }
 }

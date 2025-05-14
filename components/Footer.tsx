@@ -4,12 +4,13 @@ import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa6";
 import { useTranslations } from "next-intl";
 import navLinks from "@/constants/navLinks";
+import Image from "next/image";
 
 export default function Footer() {
   const t = useTranslations("Footer");
   return (
     <>
-      <footer className="bg-white border-t border-gray-200 text-[var(--color-text-dark)] mt-12 lg:mt-24">
+      <footer className="bg-white border-t border-[var(--color-primary)]/30 text-[var(--color-text-dark)] mt-12 lg:mt-24">
         <Container>
           <div className=" grid grid-cols-1 md:grid-cols-3 gap-8 py-12  md:justify-items-center">
             {/* Quick Links */}
@@ -67,17 +68,17 @@ export default function Footer() {
                   <FaFacebook className="size-7 text-blue-500 transition-transform duration-200 group-hover:scale-110 group-hover:text-blue-700" />
                 </a>
               </div>
-              <p className="text-sm text-gray-500">
-               {t('TemplateBy')}{" "}
+              <div className="text-sm text-gray-500">
+               
                 <a
                   href="https://www.spark-dev-studio.com/bs/"
                   target="__blank"
                   rel="noreferrer noopener"
                   className="underline"
                 >
-                  <span className="text-[#d4af37]">Spark</span> Studio
+                  <Image src="/spark-logo.png" alt="spark studio logo" width={130} height={80}/>
                 </a>
-              </p>
+              </div>
             </div>
           </div>
 
@@ -90,7 +91,7 @@ export default function Footer() {
               })}
           </div>
         </Container>
-        <div className="border-t border-gray-200 text-center py-4 text-xs text-gray-400">
+        <div className="border-t border-[var(--color-primary)]/30 text-center py-4 text-xs text-gray-400">
          {t('Copyright', { year: new Date().getFullYear() })}
         </div>
       </footer>
