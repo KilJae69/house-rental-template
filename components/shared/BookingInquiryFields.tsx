@@ -24,6 +24,7 @@ type Props = {
 
 export default function BookingInquiryFields({ onSuccess }: Props) {
       const t = useTranslations("BookingInquiryForm")
+      
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema(t)),
     defaultValues: {
