@@ -13,7 +13,7 @@ const DynamicDragableCards = dynamic(
 );
 
 export default function DragCardsSection() {
-  const { ref, isLoaded } = useLazyLoad();
+  const { ref, isInView } = useLazyLoad();
   return (
     <section
       ref={ref}
@@ -30,7 +30,7 @@ export default function DragCardsSection() {
         before:shadow-[inset_0_0_50px_rgba(0,0,0,0.45)]
         before:pointer-events-none "
     >
-      {isLoaded && <DynamicDragableCards />}
+      {isInView && <DynamicDragableCards />}
     </section>
   );
 }

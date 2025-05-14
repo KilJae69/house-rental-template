@@ -115,8 +115,8 @@ export const ModalBody = ({
             //  backdropFilter: "blur(0px)",
           }}
           transition={{ type: "tween", duration: 0.2 }}
-          className="fixed shadow-2xl top-2 left-2 rounded-lg bottom-2 overflow-hidden z-[2000] max-w-[80%] w-[350px] flex items-center justify-center"
-          style={{ height: "99vh" }}
+          className="fixed shadow-2xl top-0 left-0 -bottom-10 rounded-lg  overflow-hidden z-[2000] max-w-[80%] w-[350px] flex items-center justify-center"
+          style={{ height: "100vh" }}
         >
           {/* <Overlay /> */}
           <div
