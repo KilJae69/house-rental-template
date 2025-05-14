@@ -218,7 +218,12 @@
       "email": "spark.studio.dev@gmail.com"
     },
     "FollowUs": {
-      "title": "Pratite nas"
+      "title": "Pratite nas",
+      "links-aria": {
+        "instagram":"Zapratite nas na Instagram",
+        "facebook":"Zapratite nas na Facebook",
+        "spark":"Posjetite Spark Studio web stranicu"
+      }
     },
     "TemplateBy": "Demonstracija od",
     "Disclaimer": "Ova web-stranica je potpuno funkcionalna i <strong>visoko optimizirana web-stranica za nekretnine</strong> koju je Spark Studio izradio kao demonstraciju. Namijenjena je isključivo u promotivne svrhe — ne prikazuje stvarnu nekretninu — te pokazuje naše vještine u web-razvoju i SEO-optimiziranom dizajnu. ",

@@ -218,7 +218,12 @@
       "email": "spark.studio.dev@gmail.com"
     },
     "FollowUs": {
-      "title": "Follow Us"
+      "title": "Follow Us",
+      "links-aria": {
+        "instagram":"Follow us on Instagram",
+        "facebook":"Follow us on Facebook",
+        "spark":"Visit Spark Studio"
+      }
     },
     "TemplateBy": "Template by",
     "Disclaimer": "This site is a fully functional <strong>high-performance real-estate template</strong> crafted by Spark Studio as a proof-of-concept demo. It’s provided for presentation purposes only — not an actual live property — showcasing our web-development expertise and SEO-optimized design. ",

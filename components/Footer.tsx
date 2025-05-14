@@ -56,16 +56,20 @@ export default function Footer() {
                   target="__blank"
                   rel="noreferrer noopener"
                   className="group"
+                  aria-label={t('FollowUs.links-aria.instagram')}
                 >
                   <FaInstagram className="size-7 transition-transform duration-200 group-hover:scale-110 group-hover:text-rose-600 text-rose-400" />
+                   <span className="sr-only">{t('FollowUs.links-aria.instagram')}</span>
                 </a>
                 <a
                   href="https://facebook.com/SparkStudioDev"
                   target="__blank"
                   rel="noreferrer noopener"
                   className="group"
+                  aria-label={t('FollowUs.links-aria.facebook')}   
                 >
                   <FaFacebook className="size-7 text-blue-500 transition-transform duration-200 group-hover:scale-110 group-hover:text-blue-700" />
+                   <span className="sr-only">{t('FollowUs.links-aria.facebook')} </span>
                 </a>
               </div>
               <div className="text-sm text-gray-500">
@@ -74,9 +78,11 @@ export default function Footer() {
                   href="https://www.spark-dev-studio.com/bs/"
                   target="__blank"
                   rel="noreferrer noopener"
-                  className="underline"
+                  
+                  aria-label={t('FollowUs.links-aria.spark')} 
                 >
                   <Image src="/spark-logo.png" alt="spark studio logo" width={130} height={80}/>
+                   <span className="sr-only">{t('FollowUs.links-aria.spark')} </span>
                 </a>
               </div>
             </div>
