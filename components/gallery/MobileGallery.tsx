@@ -47,9 +47,10 @@ export default function MobileGallery() {
               loader={unsplashLoader}
               src={item.url}
               alt={item.title}
-              priority={item.id === galleryData[0].id}
-              width={800} // Example default width
-              height={600} // Example default height
+             priority={index < 2}
+             loading={index < 2 ? "eager" : "lazy"}
+              width={400} // Example default width
+              height={300} // Example default height
               placeholder="blur"
               blurDataURL="data:image/svg+xml;base64,[your-small-base64-blur-hash]"
               className="w-full rounded-lg cursor-pointer"

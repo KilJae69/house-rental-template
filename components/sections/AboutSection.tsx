@@ -46,12 +46,7 @@ export default function AboutSection() {
           <ClientOnly>
             <div className="rounded-lg relative overflow-hidden mask-fade min-h-[400px]">
               {/* <AnimatedBeamMultipleOutputs /> */}
-              <Image
-                src={bgImage}
-                alt="cabin"
-                className="object-cover"
-                fill
-              />
+              <Image src={bgImage} alt="cabin" className="object-cover" fill />
             </div>
           </ClientOnly>
         </div>
@@ -68,7 +63,11 @@ export default function AboutSection() {
             <p className="text-lg text-[var(--color-text-dark)] mb-6">
               {t("photosSection.description")}
             </p>
-            <PrimaryThemedButton>{t("photosSection.cta")}</PrimaryThemedButton>
+            <ClientOnly>
+              <PrimaryThemedButton href="/gallery">
+                {t("photosSection.cta")}
+              </PrimaryThemedButton>
+            </ClientOnly>
           </div>
         </div>
 

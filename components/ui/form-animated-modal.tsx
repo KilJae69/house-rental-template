@@ -15,6 +15,7 @@ interface ModalContextType {
   setOpen: (open: boolean) => void;
 }
 
+
 const ModalContext = createContext<ModalContextType | undefined>(undefined);
 
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
@@ -105,8 +106,13 @@ export const ModalBody = ({
             backdropFilter: "blur(10px)",
           }}
           exit={{
+            
             opacity: 0,
             backdropFilter: "blur(0px)",
+          }}
+           transition={{
+            duration: 0.4,
+           
           }}
           className="fixed [perspective:800px] [transform-style:preserve-3d] inset-0 h-full w-full overflow-hidden flex items-center justify-center z-[1000]"
         >
@@ -231,26 +237,39 @@ const CloseIcon = () => {
 };
 
 // Hook to detect clicks outside of a component.
-// Add it in a separate file, I've added here for simplicity
-export const useOutsideClick = (
-  ref: React.RefObject<HTMLDivElement>,
-  callback: (event: MouseEvent | TouchEvent) => void,
-) => {
+export function useOutsideClick(
+  modalRef: React.RefObject<HTMLElement>,
+  callback: () => void
+) {
   useEffect(() => {
-    const listener = (event: MouseEvent | TouchEvent) => {
-      // DO NOTHING if the element being clicked is the target element or their children
-      if (!ref.current || ref.current.contains(event.target as Node)) {
+    // Listen for *any* pointer event
+    const handleClick = (event: Event) => {
+      const target = event.target as Node;
+
+      // 1) inside the modal?
+      if (modalRef.current?.contains(target)) {
         return;
       }
-      callback(event);
+
+      // 2) inside any popover?
+      const pop = document.querySelector("[data-popover]");
+      if (pop instanceof HTMLElement && pop.contains(target)) {
+        return;
+      }
+
+      // 3) truly outside → close
+
+      callback();
     };
 
-    document.addEventListener("mousedown", listener);
-    document.addEventListener("touchstart", listener);
+    document.addEventListener("mousedown", handleClick);
+    // TS sees handleClick as (e: Event) because its param is Event.
+    // For touchstart we cast it to the generic EventListener.
+    document.addEventListener("touchstart", handleClick as EventListener);
 
     return () => {
-      document.removeEventListener("mousedown", listener);
-      document.removeEventListener("touchstart", listener);
+      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener("touchstart", handleClick as EventListener);
     };
-  }, [ref, callback]);
-};
+  }, [modalRef, callback]);
+}

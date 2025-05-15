@@ -165,7 +165,7 @@
     "fields": {
       "checkIn": {
         "label": "Datum dolaska *",
-        " placeholder": "Odaberite datum dolaska"
+        "placeholder": "Odaberite datum dolaska"
       },
       "checkOut": {
         "label": "Datum odlaska *",
