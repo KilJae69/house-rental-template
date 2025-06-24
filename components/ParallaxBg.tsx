@@ -26,7 +26,7 @@ export default function ParallaxBg({ image }: { image: string }) {
           src={image}
           fill
           priority
-          className="object-cover mask-image-bottom"
+          className="object-cover pointer-events-none mask-image-bottom"
           alt=""
         />
       </ClientOnly>
