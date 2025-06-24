@@ -6,7 +6,9 @@ import { useTheme } from "next-themes";
 
 import { HERO_ASSETS } from "@/constants/assetsData";
 import { FormModal } from "../FormModal";
-import ParallaxBg from "../ParallaxBg";
+//  import ParallaxBg from "../ParallaxBg";
+import ClientOnly from '../ClientOnly';
+import Image from 'next/image';
 
 
 const FALLBACK = "summer";
@@ -25,10 +27,10 @@ export default function HeroSection() {
   const bgImage = HERO_ASSETS[season] ?? HERO_ASSETS[FALLBACK];
   
   return (
-    <section className="relative w-full z-20 flex items-center justify-center h-screen ">
+    <section className="relative w-full z-20 mb-12 flex items-center justify-center h-screen ">
     
       {/* Background */}
-      <ParallaxBg image={bgImage} />
+      {/* <ParallaxBg image={bgImage} /> */}
       {/* <Image
         src={bgImage}
         alt={`${season} view of cabin`}
@@ -36,6 +38,18 @@ export default function HeroSection() {
         className="object-cover mask-image-bottom"
         priority
       /> */}
+
+      <div>
+        <ClientOnly>
+                <Image
+                  src={bgImage}
+                  fill
+                  priority
+                  className="object-cover mask-image-bottom"
+                  alt=""
+                />
+              </ClientOnly>
+      </div>
 
       {/* Overlay */}
       

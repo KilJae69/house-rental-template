@@ -54,7 +54,7 @@ function ModalHeader() {
         href="/"
         onClick={() => setOpen(false)}
         aria-label="Home"
-        className="relative w-[120px] h-[40px]"
+        className="relative w-[40px] h-[40px]"
       >
         <Image
           src={logoSrc}

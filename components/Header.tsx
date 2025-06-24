@@ -121,7 +121,7 @@ export default function Header() {
             //   height: headerState === "small" ? 70 : 100,
             // }}
             // transition={{ type: "tween", duration: 0.2 }}
-            className="relative w-[120px] h-[40px] lg:w-[180px] lg:h-[80px]"
+            className="relative w-[40px] h-[40px] lg:w-[60px] lg:h-[60px]"
           >
             <Link href="/" aria-label="Home">
               <ClientOnly>
