@@ -24,7 +24,7 @@ export default function HeroSection() {
   const bgImage = HERO_ASSETS[season] ?? HERO_ASSETS[FALLBACK];
 
   return (
-    <section className="relative w-full z-20 mb-12 flex items-center justify-center h-[100svh] overflow-hidden">
+    <section className="relative w-full z-20 mb-12 flex items-center justify-center h-[100dvh] overflow-hidden">
       {/* Background */}
       {/* <ParallaxBg image={bgImage} /> */}
       {/* <Image
