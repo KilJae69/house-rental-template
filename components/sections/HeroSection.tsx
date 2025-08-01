@@ -27,7 +27,7 @@ export default function HeroSection() {
   const bgImage = HERO_ASSETS[season] ?? HERO_ASSETS[FALLBACK];
   
   return (
-    <section className="relative w-full z-20 mb-12 flex items-center justify-center h-screen ">
+    <section className="relative w-full z-20 mb-12 flex items-center justify-center h-screen overflow-hidden">
     
       {/* Background */}
       {/* <ParallaxBg image={bgImage} /> */}
@@ -39,7 +39,7 @@ export default function HeroSection() {
         priority
       /> */}
 
-      <div>
+      <div className=''>
         <ClientOnly>
                 <Image
                   src={bgImage}
