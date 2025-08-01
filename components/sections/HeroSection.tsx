@@ -25,8 +25,8 @@ export default function HeroSection() {
 
   return (
     <section
-      style={{ height: "calc(var(--vh, 1vh) * 100)" }}
-      className="relative w-full z-20 mb-12 flex items-center justify-center overflow-hidden"
+      // style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+      className="relative w-full z-20 mb-12 flex items-center h-[100svh] max-h-[100svh] justify-center overflow-hidden"
     >
       {/* Background */}
       {/* <ParallaxBg image={bgImage} /> */}
