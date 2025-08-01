@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 import Header from "./Header";
 import ThemeFloatingDock from "./ThemeFloatingDock";
 import Footer from "./Footer";
-
+import { useLockViewportHeight } from "@/lib/hooks/useLockViewportHeight";
 
 type InnerLayoutProps = {
   children: ReactNode;
@@ -14,11 +14,10 @@ type InnerLayoutProps = {
 // Define animation variants for the items
 
 export default function InnerLayout({ children }: InnerLayoutProps) {
+  useLockViewportHeight();
   return (
     <>
-      
-        <Header />
-      
+      <Header />
 
       <div className="relative flex flex-auto overflow-hidden bg-white ">
         <div className="relative isolate flex w-full flex-col ">
