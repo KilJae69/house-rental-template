@@ -1,34 +1,30 @@
 "use client";
-import { m,  } from 'framer-motion';
+import { m } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
-
 
 import { HERO_ASSETS } from "@/constants/assetsData";
 import { FormModal } from "../FormModal";
 //  import ParallaxBg from "../ParallaxBg";
-import ClientOnly from '../ClientOnly';
-import Image from 'next/image';
-
+import ClientOnly from "../ClientOnly";
+import Image from "next/image";
 
 const FALLBACK = "summer";
 
 export default function HeroSection() {
   const t = useTranslations("HomePage");
-  const { resolvedTheme  } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   // avoid hydration mismatch
 
-  const season = resolvedTheme  ? resolvedTheme  : FALLBACK;
+  const season = resolvedTheme ? resolvedTheme : FALLBACK;
   const title = t("HeroSection.title");
   const subtitle = t("HeroSection.subtitle");
- 
 
   const bgImage = HERO_ASSETS[season] ?? HERO_ASSETS[FALLBACK];
-  
+
   return (
-    <section className="relative w-full z-20 mb-12 flex items-center justify-center h-screen overflow-hidden">
-    
+    <section className="relative w-full z-20 mb-12 flex items-center justify-center h-[100svh] overflow-hidden">
       {/* Background */}
       {/* <ParallaxBg image={bgImage} /> */}
       {/* <Image
@@ -39,40 +35,38 @@ export default function HeroSection() {
         priority
       /> */}
 
-      <div className=''>
+      <div className="absolute inset-0 overflow-hidden">
         <ClientOnly>
-                <Image
-                  src={bgImage}
-                  fill
-                  priority
-                  className="object-cover mask-image-bottom"
-                  alt=""
-                />
-              </ClientOnly>
+          <Image
+            src={bgImage}
+            fill
+            priority
+            className="object-cover mask-image-bottom"
+            alt=""
+          />
+        </ClientOnly>
       </div>
 
       {/* Overlay */}
-      
 
       {/* Content */}
       <div className="relative z-10 max-w-2xl   h-fit  flex flex-col justify-center  px-4 text-center">
-    
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
           {title.split(" ").map((word, index) => (
-              <m.span
-                key={index}
-                initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
-                animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
-                  ease: "easeInOut",
-                }}
-                className="mr-2 inline-block"
-              >
-                {word}
-              </m.span>
-            ))}
+            <m.span
+              key={index}
+              initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
+              animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: "easeInOut",
+              }}
+              className="mr-2 inline-block"
+            >
+              {word}
+            </m.span>
+          ))}
         </h1>
         <m.p
           initial={{
@@ -84,7 +78,11 @@ export default function HeroSection() {
           transition={{
             duration: 0.5,
             delay: 0.8,
-          }} className="mt-4 text-lg text-gray-200">{subtitle}</m.p>
+          }}
+          className="mt-4 text-lg text-gray-200"
+        >
+          {subtitle}
+        </m.p>
         <m.div
           initial={{
             opacity: 0,
@@ -95,8 +93,9 @@ export default function HeroSection() {
           transition={{
             duration: 0.8,
             delay: 1,
-          }} className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
-        
+          }}
+          className="mt-6 flex flex-col sm:flex-row gap-4 justify-center"
+        >
           {/* <PrimaryThemedButton
             variant="outline"
             
