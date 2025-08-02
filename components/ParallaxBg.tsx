@@ -8,9 +8,9 @@ export default function ParallaxBg({ image }: { image: string }) {
   const { scrollY } = useScroll();
 
   // slide up by 100px over the first 300px of scroll
-  const y = useTransform(scrollY, [0, 200], [0, -100]);
+  const y = useTransform(scrollY, [0, 100], [0, -100]);
   // zoom *in* a bit at top (1.1) then zoom back to normal (1) as you scroll
-  const scale = useTransform(scrollY, [0, 200], [1.1, 1]);
+  const scale = useTransform(scrollY, [0, 100], [1.1, 1]);
 
   // Optional: smooth it out with springs
   const ySpring = useSpring(y, { stiffness: 50, damping: 20 });
@@ -20,6 +20,10 @@ export default function ParallaxBg({ image }: { image: string }) {
     <m.div
       style={{ y: ySpring, scale: scaleSpring }}
       className="absolute inset-0 -z-10"
+      // Prevent layout shifts during parallax
+      layout={false}
+      // Prevent any layout changes
+      layoutId="parallax-bg"
     >
       <ClientOnly>
         <Image

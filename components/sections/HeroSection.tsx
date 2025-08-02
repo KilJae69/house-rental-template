@@ -5,14 +5,26 @@ import { useTheme } from "next-themes";
 
 import { HERO_ASSETS } from "@/constants/assetsData";
 import { FormModal } from "../FormModal";
-//  import ParallaxBg from "../ParallaxBg";
-import ClientOnly from "../ClientOnly";
-import Image from "next/image";
+
+import ParallaxBg from "../ParallaxBg";
+import { useEffect, useState } from "react";
 
 const FALLBACK = "summer";
 
 export default function HeroSection() {
   const t = useTranslations("HomePage");
+    const [fixedHeight, setFixedHeight] = useState<number | null>(null);
+
+     useEffect(() => {
+    // Measure ONCE on mount and never change it
+    setFixedHeight(window.innerHeight);
+  }, []);
+
+  // Use only the fixed pixel height, never vh
+  const sectionStyle = fixedHeight 
+    ? { height: `${fixedHeight}px` }
+    : { height: '100vh' }; // only until we get the measurement
+
   const { resolvedTheme } = useTheme();
 
   // avoid hydration mismatch
@@ -25,11 +37,13 @@ export default function HeroSection() {
 
   return (
     <section
-      // style={{ height: "calc(var(--vh, 1vh) * 100)" }}
-      className="relative w-full z-20 mb-12 flex items-center h-[100svh] max-h-[100svh] justify-center overflow-hidden"
+    style={sectionStyle}
+      className="relative w-full z-20 mb-12 flex items-center  justify-center "
+      
     >
+       
       {/* Background */}
-      {/* <ParallaxBg image={bgImage} /> */}
+      <ParallaxBg image={bgImage} />
       {/* <Image
         src={bgImage}
         alt={`${season} view of cabin`}
@@ -38,7 +52,7 @@ export default function HeroSection() {
         priority
       /> */}
 
-      <div className="absolute inset-0 overflow-hidden">
+      {/* <div className="absolute inset-0 overflow-hidden">
         <ClientOnly>
           <Image
             src={bgImage}
@@ -48,7 +62,7 @@ export default function HeroSection() {
             alt=""
           />
         </ClientOnly>
-      </div>
+      </div> */}
 
       {/* Overlay */}
 

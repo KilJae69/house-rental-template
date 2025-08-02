@@ -27,7 +27,7 @@ export default function AboutSection() {
   return (
     <Container
       as="section"
-      className="pb-12 lg:pb-24 bg-[var(--color-background-light)]"
+      className="pb-12 pt-12 lg:pt-24 lg:pb-24 bg-[var(--color-background-light)]"
     >
       <div className="space-y-12 lg:space-y-24">
         <div className=" mx-auto grid md:grid-cols-2 gap-8 items-center ">
