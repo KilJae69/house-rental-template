@@ -81,7 +81,7 @@ export default function Footer() {
                   
                   aria-label={t('FollowUs.links-aria.spark')} 
                 >
-                  <Image src="/spark-logo.png" alt="spark studio logo" width={130} height={80}/>
+                  <Image src="/spark-logo-img.png" alt="spark studio logo" width={130} height={80}/>
                    <span className="sr-only">{t('FollowUs.links-aria.spark')} </span>
                 </a>
               </div>
